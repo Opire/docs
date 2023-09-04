@@ -1,13 +1,18 @@
 {
-  "index": "Introduction",
-  "another": "Another Page",
-  "advanced": "Advanced (A Folder)",
+  "overview": "Overview",
+  "authorization": "Authorization",
+  "organizations": "Organizations",
+  "users": "Users",
+  "rewards": "Rewards",
+  "tips": "Tips",
+  "payments": "Payments",
+  "notifications": "Notifications",
   "about": {
     "title": "About",
     "type": "page"
   },
   "contact": {
-    "title": "Contact ↗",
+    "title": "API reference",
     "type": "page",
     "href": "https://twitter.com/shuding_",
     "newWindow": true
