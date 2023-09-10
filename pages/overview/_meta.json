@@ -1,3 +1,11 @@
 {
-  "introduction": "Introduction"
+  "*": {
+    "theme": {
+      "breadcrumb": false,
+      "toc": true,
+      "layout": "default"
+    }
+  },
+  "introduction": "Introduction",
+  "commands": "Commands"
 }

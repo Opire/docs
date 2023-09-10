@@ -1,5 +1,15 @@
 {
+  "*": {
+    "theme": {
+      "breadcrumb": false,
+      "toc": true,
+      "layout": "default"
+    }
+  },
   "overview": "Overview",
+  "---": {
+    "type": "separator"
+  },
   "authorization": "Authorization",
   "organizations": "Organizations",
   "users": "Users",
@@ -14,7 +24,7 @@
   "contact": {
     "title": "API reference",
     "type": "page",
-    "href": "https://twitter.com/shuding_",
+    "href": "https://api.docs.makemychange.dev",
     "newWindow": true
   }
 }
