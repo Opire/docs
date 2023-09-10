@@ -39,13 +39,20 @@ const config: DocsThemeConfig = {
     autoCollapse: false,
     titleComponent: ({ title, type, route }) => {
 
-      if (title === 'Authorization') return <>🔐 {title}</>
-      if (title === 'Organizations') return <>🏢 {title}</>
-      if (title === 'Users') return <>🙋‍♂️ {title}</>
-      if (title === 'Rewards') return <>💰 {title}</>
-      if (title === 'Tips') return <>💸 {title}</>
-      if (title === 'Payments') return <>💳 {title}</>
-      if (title === 'Notifications') return <>💌 {title}</>
+      if (title === 'Authorization'
+        || title === 'Autorización') return <>🔐 {title}</>
+      if (title === 'Organizations'
+        || title === 'Organizaciones') return <>🏢 {title}</>
+      if (title === 'Users'
+        || title === 'Usuarios') return <>🙋‍♂️ {title}</>
+      if (title === 'Rewards'
+        || title === 'Recompensas') return <>💰 {title}</>
+      if (title === 'Tips'
+        || title === 'Propinas') return <>💸 {title}</>
+      if (title === 'Payments'
+        || title === 'Pagos') return <>💳 {title}</>
+      if (title === 'Notifications'
+        || title === 'Notificaciones') return <>💌 {title}</>
 
       return <>{title}</>
     }
@@ -54,6 +61,10 @@ const config: DocsThemeConfig = {
   footer: {
     text: 'MakeMyChange',
   },
+  i18n: [
+    { locale: 'en', text: 'English' },
+    { locale: 'es', text: 'Español' }
+  ]
 }
 
 export default config

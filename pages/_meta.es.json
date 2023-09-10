@@ -1,0 +1,30 @@
+{
+  "*": {
+    "theme": {
+      "breadcrumb": false,
+      "toc": true,
+      "layout": "default"
+    }
+  },
+  "overview": "Descripción general",
+  "---": {
+    "type": "separator"
+  },
+  "authorization": "Autorización",
+  "organizations": "Organizaciones",
+  "users": "Usuarios",
+  "rewards": "Recompensas",
+  "tips": "Propinas",
+  "payments": "Pagos",
+  "notifications": "Notificaciones",
+  "about": {
+    "title": "Acerca de",
+    "type": "page"
+  },
+  "contact": {
+    "title": "Documentación de la API",
+    "type": "page",
+    "href": "https://api.docs.makemychange.dev",
+    "newWindow": true
+  }
+}
