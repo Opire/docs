@@ -10,13 +10,6 @@
   "---": {
     "type": "separator"
   },
-  "authorization": "Autorización",
-  "organizations": "Organizaciones",
-  "users": "Usuarios",
-  "rewards": "Recompensas",
-  "tips": "Propinas",
-  "payments": "Pagos",
-  "notifications": "Notificaciones",
   "about": {
     "title": "Acerca de",
     "type": "page"

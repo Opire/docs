@@ -10,13 +10,6 @@
   "---": {
     "type": "separator"
   },
-  "authorization": "Authorization",
-  "organizations": "Organizations",
-  "users": "Users",
-  "rewards": "Rewards",
-  "tips": "Tips",
-  "payments": "Payments",
-  "notifications": "Notifications",
   "about": {
     "title": "About",
     "type": "page"
