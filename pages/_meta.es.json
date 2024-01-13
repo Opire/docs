@@ -10,14 +10,8 @@
   "---": {
     "type": "separator"
   },
-  "about": {
-    "title": "Acerca de",
+  "faq": {
+    "title": "FAQ",
     "type": "page"
-  },
-  "contact": {
-    "title": "Documentación de la API",
-    "type": "page",
-    "href": "https://api.docs.opire.dev",
-    "newWindow": true
   }
 }

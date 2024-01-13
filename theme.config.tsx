@@ -41,28 +41,12 @@ const config: DocsThemeConfig = {
     defaultMenuCollapseLevel: 2,
     autoCollapse: false,
     titleComponent: ({ title, type, route }) => {
-
-      if (title === 'Authorization'
-        || title === 'Autorización') return <>🔐 {title}</>
-      if (title === 'Organizations'
-        || title === 'Organizaciones') return <>🏢 {title}</>
-      if (title === 'Users'
-        || title === 'Usuarios') return <>🙋‍♂️ {title}</>
-      if (title === 'Rewards'
-        || title === 'Recompensas') return <>💰 {title}</>
-      if (title === 'Tips'
-        || title === 'Propinas') return <>💸 {title}</>
-      if (title === 'Payments'
-        || title === 'Pagos') return <>💳 {title}</>
-      if (title === 'Notifications'
-        || title === 'Notificaciones') return <>💌 {title}</>
-
       return <>{title}</>
     }
   },
   gitTimestamp: '',
   footer: {
-    text: 'Opire',
+    text: 'Opire with 💙',
   },
   i18n: [
     { locale: 'en', text: 'English' },

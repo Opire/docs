@@ -1,9 +1,52 @@
 # Comandos
 
-`/reward 20` crea una recompensa de 20 euros para la issue donde se hizo el comentario, cualquiera puede crear recompensas si la organizacion o el repositorio tiene la aplicación de Opire instalada. Cualquiera puede crear multiples recompensas para la misma issue.
+Estos son los comandos que se pueden utilizar dentro de aquellos repositorios que tengan [nuestra app instalada](https://docs.opire.dev/overview/install-app).
 
-`/try` indica que tu vas a intentar hacer la issue para ganar la recompensa. Si cualquier otro desarollador intenta ganar la recompensa te notificaremos con los otros desarolladores en caso de que querais hacerlo juntos
+## Crear recompensa
 
-`/reclaim #17` reclama la recompensa para la issue 17
+> /reward [cantidad]
 
-`/tip 20 @nabby27` esto crea una propina de 20 euros para el usuario @nabby27. Puedes pagar la propina en Opire
+<br/>
+<span style={{ color: 'grey'}}>**Ejemplo:** `/reward 20`</span>
+<br/><br/>
+
+<span style={{ color: 'grey'}}>Crea una recompensa con la cantidad en dólares para la issue donde se hizo el comentario. Cualquiera puede crear recompensas si el repositorio tiene la aplicación de Opire instalada. Se pueden crear multiples recompensas para la misma issue, y una misma issue puede tener recompensas de diferentes creadores.</span>
+<br/><br/>
+<div style={{ color: 'grey', borderLeft: '2px solid #0EA7E1', padding: '1rem', backgroundColor: '#0EA7E10D', borderRadius: '0 8px 8px 0'}}>Este comando se puede usar **al crear un comentario** en una issue, y en el misma descripción de la issue **a la hora de crearla**. No funcionará en cualquier otro escenario (por ejemplo, al editar un comentario o la descripción de la issue).</div>
+
+## Intentar resolver la issue
+
+> /try
+
+<br/>
+<span style={{ color: 'grey'}}>**Ejemplo:** `/try`</span>
+<br/><br/>
+
+<span style={{ color: 'grey'}}>Indica que vas a intentar resolver la issue con la intención de reclamar la recompensa. Si no eres el primero, te mostraremos el listado de desarolladores que también lo están intentando en caso de que querais organizaros.</span>
+<br/><br/>
+<div style={{ color: 'grey', borderLeft: '2px solid #0EA7E1', padding: '1rem', backgroundColor: '#0EA7E10D', borderRadius: '0 8px 8px 0'}}>Este comando se puede usar **al crear un comentario** en una issue. No funcionará en cualquier otro escenario (por ejemplo, al editar un comentario o usándolo en una PR).</div>
+
+
+## Reclamar las recompensas asociadas a una issue
+
+> /claim #[número de la issue]
+
+<br/>
+<span style={{ color: 'grey'}}>**Ejemplo:** `/claim #27`</span>
+<br/><br/>
+
+<span style={{ color: 'grey'}}>Reclama las recompensas asociadas a la issue mencionada. Se les notifacará a los creadores de las recompensas para que revisen tu PR y realicen el pago correspondiente.</span>
+<br/><br/>
+<div style={{ color: 'grey', borderLeft: '2px solid #0EA7E1', padding: '1rem', backgroundColor: '#0EA7E10D', borderRadius: '0 8px 8px 0'}}>Este comando se puede usar **al crear un comentario** en una PR, y en la misma descripción de la PR **a la hora de crearla**. No funcionará en cualquier otro escenario (por ejemplo, al editar un comentario o la descripción de la PR, o al escribir un comentario en una issue).</div>
+
+## Dar propina a un usuario
+
+> /tip [cantidad] @[usuario]
+
+<br/>
+<span style={{ color: 'grey'}}>**Ejemplo:** `/tip 10 @nabby27`</span>
+<br/><br/>
+
+<span style={{ color: 'grey'}}>Esto crea una propina con la cantidad en dólares para el usuario mencionado. En tu dashboard puedes [pagar tus propinas](https://app.opire.dev/dashboard/creator/tips) o [comprobrobar las propinas que has recibido](https://app.opire.dev/dashboard/programmer/tips).</span>
+<br/><br/>
+<div style={{ color: 'grey', borderLeft: '2px solid #0EA7E1', padding: '1rem', backgroundColor: '#0EA7E10D', borderRadius: '0 8px 8px 0'}}>Este comando se puede usar **al crear un comentario** en una PR/issue, y en la misma descripción de la PR/issue **a la hora de crearla**. No funcionará en cualquier otro escenario (por ejemplo, al editar un comentario o la descripción de la PR/issue).</div>
