@@ -2,12 +2,12 @@ import React from 'react'
 import { DocsThemeConfig } from 'nextra-theme-docs'
 
 const config: DocsThemeConfig = {
-  logo: <span>MakeMyChange</span>,
+  logo: <span>Opire</span>,
   // project: {
   //   link: 'https://github.com/shuding/nextra-docs-template',
   // },
   chat: {
-    link: 'https://makemychange.discord.com', // FIXME: add correct link
+    link: 'https://opire.discord.com', // FIXME: add correct link
   },
   editLink: {
     text: '',
@@ -17,14 +17,14 @@ const config: DocsThemeConfig = {
   },
   useNextSeoProps() {
     return {
-      titleTemplate: 'MakeMyChange Docs'
+      titleTemplate: 'Opire Docs'
     }
   },
   head: (
     <>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta property="og:title" content="MakeMyChange" />
-      <meta property="og:description" content="Learn all about how MakeMyChange works to use rewards in your projects" /> {/** TODO: change description */}
+      <meta property="og:title" content="Opire" />
+      <meta property="og:description" content="Learn all about how Opire works to use rewards in your projects" /> {/** TODO: change description */}
     </>
   ),
   // primaryHue: 279, // 84? 180?
@@ -59,7 +59,7 @@ const config: DocsThemeConfig = {
   },
   gitTimestamp: '',
   footer: {
-    text: 'MakeMyChange',
+    text: 'Opire',
   },
   i18n: [
     { locale: 'en', text: 'English' },

@@ -1,4 +1,4 @@
-SERVICE_NAME=make_my_change_docs
+SERVICE_NAME=opire_docs
 
 install:
 	docker compose run --rm $(SERVICE_NAME) npm install $(deps)
