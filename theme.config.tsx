@@ -51,7 +51,7 @@ const config: DocsThemeConfig = {
   i18n: [
     { locale: 'en', text: 'English' },
     { locale: 'es', text: 'Español' }
-  ]
+  ],
 }
 
 export default config
