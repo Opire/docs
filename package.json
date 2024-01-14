@@ -9,12 +9,13 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@tabler/icons": "^1.95.1",
+    "echarts-for-react": "^3.0.2",
     "next": "^13.0.6",
     "nextra": "latest",
     "nextra-theme-docs": "latest",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "@tabler/icons": "^1.95.1"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/node": "18.11.10",

@@ -1,2 +1,30 @@
+import { TipCalculator } from '../../components/TipCalculator';
+
 # Precios
 
+<br/>
+
+<div style={{ borderLeft: '2px solid #0EA7E1', padding: '1rem', backgroundColor: '#0EA7E10D', borderRadius: '0 8px 8px 0'}}>**Los desarrolladores se llevan el 100% de la propina. Los costes asociados se añaden a la propina, resultando en el precio final a pagar**.</div>
+
+<br/>
+
+## Método de pago
+
+Opire utiliza Stripe como plataforma de pagos. Por tanto, podrás pagar con tantos métodos de pago que Stripe te ofrezca.
+
+Cuando creas una propina en Opire, no es necesario introducir tu método de pago de inmediato. Puedes postergar el pago y proporcionar tus datos a Stripe solo cuando estés listo para realizar la transacción. Para saldar propinas pendientes, simplemente dirígete a tu panel de [creador](https://app.opire.dev/dashboard/creator/tips).
+
+## Precio mínimo y costes
+
+Puedes empezar a crear propinas **desde tan solo $5**.
+
+El coste total a pagar consistirá en la suma de la cantidad de la propina, junto al **fee de Stripe ($0.35 + 5.25%)** y **nuestro fee (20% de la propina)**.
+
+<br/>
+<div style={{ borderLeft: '2px solid #0EA7E1', padding: '1rem', backgroundColor: '#0EA7E10D', borderRadius: '0 8px 8px 0'}}>Nuestro fee es **significativamente más bajo en las recompensas (10%)**, dado que queremos apostar por un entorno colaborativo donde tanto desarrolladores como propietarios de código puedan vivir del open-source.</div>
+<br/>
+
+## Calculadora
+<br/>
+
+<TipCalculator/>
