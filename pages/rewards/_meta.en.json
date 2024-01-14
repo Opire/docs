@@ -1,0 +1,11 @@
+{
+  "*": {
+    "theme": {
+      "breadcrumb": false,
+      "toc": true,
+      "layout": "default"
+    }
+  },
+  "pricing": "Pricing",
+  "lifecycle": "Lifecycle"
+}

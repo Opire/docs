@@ -10,6 +10,8 @@
   "---": {
     "type": "separator"
   },
+  "rewards": "Rewards",
+  "tips": "Tips",
   "faq": {
     "title": "FAQ",
     "type": "page"

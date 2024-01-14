@@ -1,0 +1,11 @@
+{
+  "*": {
+    "theme": {
+      "breadcrumb": false,
+      "toc": true,
+      "layout": "default"
+    }
+  },
+  "pricing": "Precios",
+  "lifecycle": "Ciclo de vida"
+}
