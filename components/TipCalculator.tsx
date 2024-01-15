@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import ReactEcharts from "echarts-for-react";
+import { useRouter } from 'next/router';
 
 const STRIPE_FEE = {
   fixed: 0.35,
@@ -85,6 +86,8 @@ function generateTipPriceSerie(tipPriceSelected: number, minDefault: number, max
 }
 
 export function TipCalculator() {
+  const { locale } = useRouter();
+
   const [tipValue, setTipValue] = useState(5);
   const handleTipValueChange = value => setTipValue(clamp(value, CHART_DEFAULT_MIN_VALUE, INPUT_TIP_MAX_VALUE))
   const debouncedTipValue = useDebounceWithMinMax({ value: tipValue, min: CHART_DEFAULT_MIN_VALUE, max: INPUT_TIP_MAX_VALUE });
@@ -92,10 +95,26 @@ export function TipCalculator() {
 
   const { tipPriceSerie, totalPriceSerie, opireFeeSerie, stripeFeeSerie } = generateTipPriceSerie(debouncedTipValue, CHART_DEFAULT_MIN_VALUE, CHART_DEFAULT_MAX_VALUE, CHART_STEP)
 
+  const i18n = {
+    en: {
+      total: "Total",
+      opireFee: "Opire fee",
+      stripeFee: "Stripe fee",
+      tip: "Tip",
+      tipPricing: "Tip pricing",
+    },
+    es: {
+      total: "Total",
+      opireFee: "Comisión de Opire",
+      stripeFee: "Comisión de Stripe",
+      tip: "Propina",
+      tipPricing: "Precio de la propina",
+    },
+  }
 
   const option = {
     title: {
-      text: 'Tip pricing'
+      text: i18n[locale].tipPricing,
     },
     tooltip: {
       trigger: 'axis',
@@ -106,7 +125,13 @@ export function TipCalculator() {
       }
     },
     legend: {
-      data: ['Total', 'Tip', 'Opire fee', 'Stripe fee'],
+      data: [
+        i18n[locale].total,
+        i18n[locale].tip,
+        i18n[locale].opireFee,
+        i18n[locale].stripeFee
+      ],
+      type: 'scroll',
       bottom: 20,
     },
     grid: {
@@ -117,7 +142,7 @@ export function TipCalculator() {
     },
     xAxis: {
       // type: 'log',
-      name: 'Tip',
+      name: i18n[locale].tip,
       data: tipPriceSerie,
     },
     yAxis: {
@@ -127,7 +152,7 @@ export function TipCalculator() {
       { // total price,
         data: totalPriceSerie,
         type: 'line',
-        name: 'Total',
+        name: i18n[locale].total,
         symbolSize: (value, params) => 0,
         itemStyle: {
           color: '#E71BB6'
@@ -155,7 +180,7 @@ export function TipCalculator() {
       { // opire fee
         data: opireFeeSerie,
         type: 'line',
-        name: 'Opire fee',
+        name: i18n[locale].opireFee,
         symbolSize: (value, params) => 0,
         itemStyle: {
           color: '#12b886'
@@ -183,7 +208,7 @@ export function TipCalculator() {
       { // stripe fee,
         data: stripeFeeSerie,
         type: 'line',
-        name: 'Stripe fee',
+        name: i18n[locale].stripeFee,
         symbolSize: (value, params) => 0,
         itemStyle: {
           color: '#635BFF'
@@ -212,7 +237,7 @@ export function TipCalculator() {
       { // tip price,
         data: tipPriceSerie,
         type: 'line',
-        name: 'Tip',
+        name: i18n[locale].tip,
         symbolSize: (value, params) => 0,
         itemStyle: {
           color: '#E7CE1B'
@@ -244,7 +269,7 @@ export function TipCalculator() {
   return (
     <>
       <div>
-        <label htmlFor='tip_price' style={{ marginRight: '8px' }}>Tip:</label>
+        <label htmlFor='tip_price' style={{ marginRight: '8px' }}>{i18n[locale].tip}:</label>
         <input
           name="tip_price"
           type="number"
@@ -260,15 +285,15 @@ export function TipCalculator() {
 
         <div style={{ display: 'flex', gap: '1rem', gridTemplateColumns: 'repeat(3, 1fr)', justifyContent: 'space-between' }}>
           <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-            <span style={{ marginRight: '8px' }}>Total</span>
+            <span style={{ marginRight: '8px', textAlign: 'center' }}>{i18n[locale].total}</span>
             <span style={{ padding: '5px 10px', borderRadius: '5px', border: '1px solid #ccc', color: '#E71BB6', fontSize: '1.2rem', fontWeight: 600 }}>{formatPriceFromUsd(total)}</span>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-            <span style={{ marginRight: '8px' }}>Opire fee</span>
+            <span style={{ marginRight: '8px', textAlign: 'center' }}>{i18n[locale].opireFee}</span>
             <span style={{ padding: '5px 10px', borderRadius: '5px', border: '1px solid #ccc', color: '#12b886', fontSize: '1.2rem', fontWeight: 600 }}>{formatPriceFromUsd(opireFee)}</span>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-            <span style={{ marginRight: '8px' }}>Stripe fee</span>
+            <span style={{ marginRight: '8px', textAlign: 'center' }}>{i18n[locale].stripeFee}</span>
             <span style={{ padding: '5px 10px', borderRadius: '5px', border: '1px solid #ccc', color: '#635BFF', fontSize: '1.2rem', fontWeight: 600 }}>{formatPriceFromUsd(compensatedStripeFee)}</span>
           </div>
         </div>
