@@ -124,10 +124,10 @@ export function TipCalculator() {
     },
     legend: {
       data: [
-        i18n[locale].total,
-        i18n[locale].tip,
-        i18n[locale].opireFee,
-        i18n[locale].stripeFee
+        i18n.total,
+        i18n.tip,
+        i18n.opireFee,
+        i18n.stripeFee
       ],
       type: "scroll",
       bottom: 20,
