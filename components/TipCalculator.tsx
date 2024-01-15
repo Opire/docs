@@ -17,7 +17,7 @@ const INPUT_TIP_MAX_VALUE = 2_000;
 
 const CHART_STEP = 1;
 const CHART_DEFAULT_MIN_VALUE = 0;
-const CHART_DEFAULT_MAX_VALUE = 50.00;
+const CHART_DEFAULT_MAX_VALUE = 20.00;
 
 function round(value: number): number {
   return Math.round((value + Number.EPSILON) * 100) / 100;
