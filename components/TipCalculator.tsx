@@ -94,10 +94,10 @@ export function TipCalculator() {
   const { locale } = useRouter();
   const i18n = get18n(locale);
 
-  const [tipValue, setTipValue] = useState(5);
-  const handleTipValueChange = (value: number) => setTipValue(clamp(value, CHART_DEFAULT_MIN_VALUE, INPUT_TIP_MAX_VALUE));
+  const [tipValue, setTipValue] = useState<number | undefined>(5);
+  const handleTipValueChange = (value: number) => setTipValue(clamp(value, 0, INPUT_TIP_MAX_VALUE));
   const debouncedTipValue = useDebounceWithMinMax({
-    value: tipValue,
+    value: tipValue ?? 0,
     min: CHART_DEFAULT_MIN_VALUE,
     max: INPUT_TIP_MAX_VALUE,
   });
@@ -123,12 +123,7 @@ export function TipCalculator() {
       },
     },
     legend: {
-      data: [
-        i18n.total,
-        i18n.tip,
-        i18n.opireFee,
-        i18n.stripeFee
-      ],
+      data: [i18n.total, i18n.tip, i18n.opireFee, i18n.stripeFee],
       type: "scroll",
       bottom: 20,
     },
@@ -280,8 +275,12 @@ export function TipCalculator() {
           step={CHART_STEP}
           min={CHART_DEFAULT_MIN_VALUE}
           max={INPUT_TIP_MAX_VALUE}
-          value={tipValue}
-          onChange={(element) => element.target.value && handleTipValueChange(+element.target.value)}
+          value={tipValue ?? ""}
+          onChange={(element) =>
+            element.target.value
+              ? handleTipValueChange(+element.target.value)
+              : setTipValue(undefined)
+          }
           style={{
             padding: "5px 10px",
             borderRadius: "5px",
@@ -299,6 +298,7 @@ export function TipCalculator() {
             gap: "1rem",
             gridTemplateColumns: "repeat(3, 1fr)",
             justifyContent: "space-between",
+            alignItems: "flex-end",
           }}
         >
           <div
