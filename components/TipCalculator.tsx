@@ -16,7 +16,7 @@ const OPIRE_FEE = {
 const INPUT_TIP_MAX_VALUE = 2_000;
 
 const CHART_STEP = 1;
-const CHART_DEFAULT_MIN_VALUE = 5.00;
+const CHART_DEFAULT_MIN_VALUE = 0;
 const CHART_DEFAULT_MAX_VALUE = 50.00;
 
 function round(value: number): number {
@@ -95,17 +95,17 @@ export function TipCalculator() {
   const i18n = get18n(locale);
 
   const [tipValue, setTipValue] = useState<number | undefined>(5);
-  const handleTipValueChange = (value: number) => setTipValue(clamp(value, 0, INPUT_TIP_MAX_VALUE));
+  const handleTipValueChange = (value: number) => setTipValue(clamp(value, CHART_DEFAULT_MIN_VALUE, INPUT_TIP_MAX_VALUE));
   const debouncedTipValue = useDebounceWithMinMax({
-    value: tipValue ?? 0,
-    min: 0,
+    value: tipValue ?? CHART_DEFAULT_MIN_VALUE,
+    min: CHART_DEFAULT_MIN_VALUE,
     max: INPUT_TIP_MAX_VALUE,
   });
   const { total, opireFee, compensatedStripeFee } = calculate(debouncedTipValue);
 
   const { tipPriceSerie, totalPriceSerie, opireFeeSerie, stripeFeeSerie } = generateTipPriceSerie(
       debouncedTipValue,
-      0,
+      CHART_DEFAULT_MIN_VALUE,
       CHART_DEFAULT_MAX_VALUE,
       CHART_STEP
     );
@@ -154,7 +154,7 @@ export function TipCalculator() {
         markPoint: {
           data: [
             {
-              xAxis: debouncedTipValue - 5,
+              xAxis: debouncedTipValue - CHART_DEFAULT_MIN_VALUE,
               yAxis: total,
               itemStyle: {
                 color: "white",
@@ -183,7 +183,7 @@ export function TipCalculator() {
         markPoint: {
           data: [
             {
-              xAxis: debouncedTipValue - 5,
+              xAxis: debouncedTipValue - CHART_DEFAULT_MIN_VALUE,
               yAxis: opireFee,
               itemStyle: {
                 color: "white",
@@ -212,7 +212,7 @@ export function TipCalculator() {
         markPoint: {
           data: [
             {
-              xAxis: debouncedTipValue - 5,
+              xAxis: debouncedTipValue - CHART_DEFAULT_MIN_VALUE,
               yAxis: compensatedStripeFee,
 
               itemStyle: {
@@ -242,7 +242,7 @@ export function TipCalculator() {
         markPoint: {
           data: [
             {
-              xAxis: debouncedTipValue - 5,
+              xAxis: debouncedTipValue - CHART_DEFAULT_MIN_VALUE,
               yAxis: debouncedTipValue,
 
               itemStyle: {
