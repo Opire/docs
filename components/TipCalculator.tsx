@@ -98,14 +98,14 @@ export function TipCalculator() {
   const handleTipValueChange = (value: number) => setTipValue(clamp(value, 0, INPUT_TIP_MAX_VALUE));
   const debouncedTipValue = useDebounceWithMinMax({
     value: tipValue ?? 0,
-    min: CHART_DEFAULT_MIN_VALUE,
+    min: 0,
     max: INPUT_TIP_MAX_VALUE,
   });
   const { total, opireFee, compensatedStripeFee } = calculate(debouncedTipValue);
 
   const { tipPriceSerie, totalPriceSerie, opireFeeSerie, stripeFeeSerie } = generateTipPriceSerie(
       debouncedTipValue,
-      CHART_DEFAULT_MIN_VALUE,
+      0,
       CHART_DEFAULT_MAX_VALUE,
       CHART_STEP
     );
