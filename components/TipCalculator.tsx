@@ -104,11 +104,11 @@ export function TipCalculator() {
   const { total, opireFee, compensatedStripeFee } = calculate(debouncedTipValue);
 
   const { tipPriceSerie, totalPriceSerie, opireFeeSerie, stripeFeeSerie } = generateTipPriceSerie(
-      debouncedTipValue,
-      CHART_DEFAULT_MIN_VALUE,
-      CHART_DEFAULT_MAX_VALUE,
-      CHART_STEP
-    );
+    debouncedTipValue,
+    CHART_DEFAULT_MIN_VALUE,
+    CHART_DEFAULT_MAX_VALUE,
+    CHART_STEP
+  );
 
   const option = {
     title: {

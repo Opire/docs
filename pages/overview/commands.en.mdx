@@ -1,3 +1,5 @@
+import { InfoPanel } from '../../components/InfoPanel';
+
 # Commands
 
 These are the commands that can be used within repositories that have [our app installed](/overview/install-app).
@@ -12,7 +14,7 @@ These are the commands that can be used within repositories that have [our app i
 
 <span>Create a reward with the specified amount in dollars for the issue where the comment was made. Anyone can create rewards if the repository has the Opire app installed. Multiple rewards can be created for the same issue, and a single issue can have rewards from different creators.</span>
 <br/><br/>
-<div style={{ borderLeft: '2px solid #0EA7E1', padding: '1rem', backgroundColor: '#0EA7E10D', borderRadius: '0 8px 8px 0' }}>This command can be used **when creating a comment** on an issue and in the description of the issue **when creating it**. It will not work in any other scenario (for example, when editing a comment or the description of the issue).</div>
+<InfoPanel>This command can be used **when creating a comment** on an issue and in the description of the issue **when creating it**. It will not work in any other scenario (for example, when editing a comment or the description of the issue).</InfoPanel>
 
 ## Try to Solve the Issue
 
@@ -24,7 +26,7 @@ These are the commands that can be used within repositories that have [our app i
 
 <span>Indicate that you are going to try to solve the issue with the intention of claiming the reward. If you are not the first one, we will show you the list of developers who are also trying in case you want to organize yourselves.</span>
 <br/><br/>
-<div style={{ borderLeft: '2px solid #0EA7E1', padding: '1rem', backgroundColor: '#0EA7E10D', borderRadius: '0 8px 8px 0' }}>This command can be used **when creating a comment** on an issue. It will not work in any other scenario (for example, when editing a comment or using it in a PR).</div>
+<InfoPanel>This command can be used **when creating a comment** on an issue. It will not work in any other scenario (for example, when editing a comment or using it in a PR).</InfoPanel>
 
 ## Claim Rewards Associated with an Issue
 
@@ -36,7 +38,7 @@ These are the commands that can be used within repositories that have [our app i
 
 <span>Claim the rewards associated with the mentioned issue. The reward creators will be notified to review your PR and make the corresponding payment.</span>
 <br/><br/>
-<div style={{ borderLeft: '2px solid #0EA7E1', padding: '1rem', backgroundColor: '#0EA7E10D', borderRadius: '0 8px 8px 0' }}>This command can be used **when creating a comment** on a PR and in the same description of the PR **when creating it**. It will not work in any other scenario (for example, when editing a comment or the description of the PR, or when writing a comment on an issue).</div>
+<InfoPanel>This command can be used **when creating a comment** on a PR and in the same description of the PR **when creating it**. It will not work in any other scenario (for example, when editing a comment or the description of the PR, or when writing a comment on an issue).</InfoPanel>
 
 ## Tip a User
 
@@ -48,4 +50,4 @@ These are the commands that can be used within repositories that have [our app i
 
 <span>This creates a tip with the specified amount in dollars for the mentioned user. On your dashboard, you can [pay your tips](https://app.opire.dev/dashboard/creator/tips) or [check the tips you have received](https://app.opire.dev/dashboard/programmer/tips).</span>
 <br/><br/>
-<div style={{ borderLeft: '2px solid #0EA7E1', padding: '1rem', backgroundColor: '#0EA7E10D', borderRadius: '0 8px 8px 0' }}>This command can be used **when creating a comment** on a PR/issue and in the same description of the PR/issue **when creating it**. It will not work in any other scenario (for example, when editing a comment or the description of the PR/issue).</div>
+<InfoPanel>This command can be used **when creating a comment** on a PR/issue and in the same description of the PR/issue **when creating it**. It will not work in any other scenario (for example, when editing a comment or the description of the PR/issue).</InfoPanel>

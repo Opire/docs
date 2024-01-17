@@ -1,0 +1,31 @@
+import { TipCalculator } from '../../components/TipCalculator';
+import { InfoPanel } from '../../components/InfoPanel';
+
+# Prices
+
+<br/>
+
+<InfoPanel>**Developers receive 100% of the tip.** Associated costs are charged on top of the tip amount, resulting in the final price to pay.</InfoPanel>
+
+<br/>
+
+## Payment Method
+
+Opire uses Stripe as its payment platform. Therefore, you can pay with any payment methods that Stripe provides.
+
+When you create a tip on Opire, it's not necessary to add your payment method immediately. You can delay the payment and provide your data to Stripe only when you are ready to complete the transaction. To pay pending tips, go to your [creator dashboard](https://app.opire.dev/dashboard/creator/tips).
+
+## Minimum Price and Costs
+
+You can start creating tips **from as little as $1**.
+
+The total cost to pay will be the sum of the tip amount, along with the **Stripe fee ($0.35 + 5.25%)** and **our fee (20% of the tip)**.
+
+<br/>
+<InfoPanel>Our fee is **significantly lower in rewards (10%)**, as we aim to support a collaborative environment where both developers and code owners can thrive in the open-source world.</InfoPanel>
+<br/>
+
+## Playground
+<br/>
+
+<TipCalculator/>
