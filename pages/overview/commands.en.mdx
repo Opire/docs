@@ -1,4 +1,5 @@
 import { InfoPanel } from '../../components/InfoPanel';
+import { DimmedText } from '../../components/DimmedText';
 
 # Commands
 
@@ -9,7 +10,7 @@ These are the commands that can be used within repositories that have [our app i
 > /reward [amount]
 
 <br/>
-<span style={{ color: 'grey' }}>**Example:** `/reward 20`</span>
+<DimmedText>**Example:** `/reward 20`</DimmedText>
 <br/><br/>
 
 <span>Create a reward with the specified amount in dollars for the issue where the comment was made. Anyone can create rewards if the repository has the Opire app installed. Multiple rewards can be created for the same issue, and a single issue can have rewards from different creators.</span>
@@ -21,7 +22,7 @@ These are the commands that can be used within repositories that have [our app i
 > /try
 
 <br/>
-<span style={{ color: 'grey' }}>**Example:** `/try`</span>
+<DimmedText>**Example:** `/try`</DimmedText>
 <br/><br/>
 
 <span>Indicate that you are going to try to solve the issue with the intention of claiming the reward. If you are not the first one, we will show you the list of developers who are also trying in case you want to organize yourselves.</span>
@@ -33,7 +34,7 @@ These are the commands that can be used within repositories that have [our app i
 > /claim #[issue number]
 
 <br/>
-<span style={{ color: 'grey' }}>**Example:** `/claim #27`</span>
+<DimmedText>**Example:** `/claim #27`</DimmedText>
 <br/><br/>
 
 <span>Claim the rewards associated with the mentioned issue. The reward creators will be notified to review your PR and make the corresponding payment.</span>
@@ -45,7 +46,7 @@ These are the commands that can be used within repositories that have [our app i
 > /tip [amount] @[user]
 
 <br/>
-<span style={{ color: 'grey' }}>**Example:** `/tip 10 @nabby27`</span>
+<DimmedText>**Example:** `/tip 10 @nabby27`</DimmedText>
 <br/><br/>
 
 <span>This creates a tip with the specified amount in dollars for the mentioned user. On your dashboard, you can [pay your tips](https://app.opire.dev/dashboard/creator/tips) or [check the tips you have received](https://app.opire.dev/dashboard/programmer/tips).</span>
