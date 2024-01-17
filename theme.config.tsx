@@ -1,9 +1,21 @@
 import React from 'react'
 import { DocsThemeConfig } from 'nextra-theme-docs'
+import { useRouter } from 'next/router';
+
+function SearchPlaceholder() {
+  const { locale } = useRouter();
+
+  const map = {
+    es: 'Buscar',
+    en: 'Search',
+  }
+
+  return map[locale] ?? map.en;
+}
 
 const config: DocsThemeConfig = {
   search: {
-    placeholder: 'Search',
+    placeholder: SearchPlaceholder
   },
   logo: <span>Opire</span>,
   // project: {
