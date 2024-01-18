@@ -249,7 +249,7 @@ export function RewardCalculator() {
           [
             {
               xAxis: 0,
-              name: 'Below minimum',
+              name: i18n.belowMin,
             },
             {
               xAxis: 20,
@@ -579,6 +579,7 @@ function get18n(language: string) {
     reward: "Reward",
     rewardPricing: "Reward pricing",
     isMember: "Are you member of the organization?",
+    belowMin: "Below min.",
   };
 
   const i18n: Record<string, typeof en> = {
@@ -591,6 +592,7 @@ function get18n(language: string) {
       reward: "Recompensa",
       rewardPricing: "Precio de la recompensa",
       isMember: "¿Eres miembro de la organización?",
+      belowMin: "Inválido",
     },
   };
 

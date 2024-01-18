@@ -267,7 +267,7 @@ export function TipCalculator() {
             [
               {
                 xAxis: 0,
-                name: 'Below minimum',
+                name: i18n.belowMin,
               },
               {
                 xAxis: 1,
@@ -441,6 +441,7 @@ function get18n(language: string) {
     stripeFee: "Stripe fee",
     tip: "Tip",
     tipPricing: "Tip pricing",
+    belowMin: "Below min.",
   };
 
   const i18n: Record<string, typeof en> = {
@@ -451,6 +452,7 @@ function get18n(language: string) {
       stripeFee: "Comisión de Stripe",
       tip: "Propina",
       tipPricing: "Precio de la propina",
+      belowMin: "Inválido",
     },
   };
 
