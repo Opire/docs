@@ -1,1 +1,47 @@
+import { InfoPanel } from '../../components/InfoPanel';
+import { DimmedText } from '../../components/DimmedText';
+import { RewardCalculator } from '../../components/RewardCalculator';
+
 # Precios
+
+<br/>
+
+<InfoPanel>**Los desarrolladores se llevan el 100% de las recompensas.** Los costes asociados se añaden a la recompensas, resultando en el precio final a pagar.</InfoPanel>
+
+<br/>
+
+## Método de pago
+
+Opire utiliza Stripe como plataforma de pagos. Por tanto, podrás pagar con tantos métodos de pago que Stripe te ofrezca.
+
+Cuando creas una recompensa en Opire, no es necesario introducir tu método de pago de inmediato. Puedes postergar el pago y proporcionar tus datos a Stripe solo cuando estés listo para realizar la transacción. Para pagar recompensas pendientes, simplemente dirígete a tu panel de [creador](https://app.opire.dev/dashboard/creator/rewards).
+
+## Precio mínimo y costes
+
+Puedes empezar a crear recompensas **desde $20**.
+
+<br/>
+<InfoPanel>Desde Opire consideramos que **como mínimo** una recompensa debe ser de $20 dada la **involucración y tiempo** que el desarrollador debe emplear a la hora de enfrentarse a cualquier tarea <DimmedText>(entender el problema, valorar diferentes soluciones, implementación, estar atento a posibles cambios/sugerencias que surgan durante las PRs, etc)</DimmedText></InfoPanel>
+<br/>
+
+Por lo general, el coste total a pagar consistirá en la suma de la cantidad de la recompensa, junto al **fee de Stripe ($0.35 + 5.25%)** y **nuestro fee (10% de la recompensa)**.
+
+### Porcentaje para el propietario del código
+
+Las recompensas las puede crear cualquier persona/organizacion. Por tanto, los propietarios del código (o los mantenedores) pueden ser los creadores de las recompensas. Cuando esto sucede, los costes asociados no se ven modificados respecto a lo visto en la sección anterior.
+
+Sin embargo, cuando quien crea la recompensa es alguien ajeno a la organización, los costes asociados incluirán un **5% de la recompensa** que irán destinados íntegramente a la organización/persona que mantenga el proyecto donde se haya creado la recompensa.
+
+
+<br/>
+<InfoPanel>
+En Opire estamos comprometidos con el software open-source, por tanto creemos que **sus mantenedores deben ser recompensados económicamente** por su gran esfuerzo e influencia. 
+
+Idealmente, nos gustaría ver un mundo en el que **cualquiera pueda vivir del software open-source** (tanto los mantenedores de código abierto, como los desarrolladores que colaboren en ellos).
+</InfoPanel>
+<br/>
+
+## Calculadora
+<br/>
+
+<RewardCalculator/>

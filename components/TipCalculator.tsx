@@ -259,6 +259,22 @@ export function TipCalculator() {
           ],
           animation: false,
         },
+        markArea: {
+          itemStyle: {
+            color: 'rgba(255, 173, 177, 0.4)',
+          },
+          data: [
+            [
+              {
+                xAxis: 0,
+                name: 'Below minimum',
+              },
+              {
+                xAxis: 1,
+              }
+            ],
+          ]
+        },
       },
     ],
   };
