@@ -10,6 +10,14 @@ import { RewardCalculator } from '../../components/RewardCalculator';
 
 <br/>
 
+## Divisas
+
+En Opire, todos los precios están reflejados en **dólares estadounidense (USD)**. Por tanto, a la hora de crear recompensas no es necesario indicar la divisa de la cantidad: siempre serán USD.
+
+La elección de utilizar una divisa internacional facilita la comparación del valor real en relación con tu moneda local. Además, esta elección brinda la ventaja de que los desarrolladores pueden recibir recompensas desde cualquier parte del mundo sin la necesidad de preocuparse por las complicaciones de las distintas divisas.
+
+Este enfoque implica que todas las transacciones se llevarán a cabo en dólares estadounidenses. Cuando un usuario reciba un pago, la cantidad se reflejará en la moneda que acepte su banco. Si su banco acepta USD, el usuario recibirá el monto en USD. En el caso de que el banco solo acepte una moneda diferente, como euros (€), el usuario recibirá la equivalencia en base al tipo de cambio en el momento de la transacción, un proceso que Stripe se encarga de realizar automáticamente. Esta simplicidad asegura una experiencia fluida y sin complicaciones para nuestros usuarios, independientemente de su ubicación o moneda preferida.
+
 ## Método de pago
 
 Opire utiliza Stripe como plataforma de pagos. Por tanto, podrás pagar con tantos métodos de pago que Stripe te ofrezca.
