@@ -1,0 +1,70 @@
+# Lifecycle
+
+At Opire, the lifecycle of a reward begins when a user wants to incentivize the resolution of an issue. This process starts by creating a reward associated with an issue using [our commands](/overview/commands#create-reward).
+
+Upon creating the reward, it will appear on the [Opire platform](https://app.opire.dev), as well as on the issue itself (with a message from our bot and a label indicating the reward amount). Any programmer can view the reward and decide whether to attempt to resolve the issue, notifying others using the [try](/overview/commands#try-to-solve-the-issue) command.
+
+Once the programmer opens a pull request (PR) with the necessary changes, they can [claim](/overview/commands#claim-rewards-associated-with-an-issue) the rewards associated with the issue. This notifies the reward creators with a link to the PR, indicating that they can proceed with the payment.
+
+The creator, after reviewing the PR, can initiate the reward payment through the Opire dashboard. If multiple programmers have claimed the same rewards, the creator **must choose whom to pay**.
+
+At this point, the platform performs a verification to determine if the reward recipient has the capability to receive payments. If the user can receive payments, Opire redirects the creator to a Stripe payment gateway. The final payment amount will be the reward amount plus the [associated costs](/rewards/pricing#minimum-price-and-costs). Upon completing the payment, the user receives the reward within approximately 1-7 business days.
+
+Alternatively, if the user cannot receive payments, the platform informs the user of this situation and prompts them to configure their Stripe account. Once configured, the user must notify the creator to attempt the reward payment again.
+
+## Creator Unrelated to Organization
+
+Opire provides complete flexibility when creating rewards, whether you are one of the project maintainers or an interested user.
+
+If the reward creator is external to the project (not among the members of the organization hosting the project code), an [additional percentage](/rewards/pricing#percentage-for-code-owner) will be charged when paying the reward, and it will go to the code owners.
+
+On the other hand, if the reward creator is a project member this percentage will not be applied to the final costs.
+
+## Multiple Rewards
+
+Another distinctive feature of Opire is that there are no limits on the number of rewards that can be created for a single issue.
+
+If someone prefers to start with a more modest amount, they can always add more rewards in the future. These will be added to existing ones, and the creator will pay for all pending rewards when someone claims them.
+
+## Multiple Creators
+
+Furthermore, multiple users may be interested in creating rewards for the same issue.
+
+In this case, Opire also supports this collaborative effort, so the amount the programmer receives will be the sum of all rewards created by different users. **Each creator will pay their part separately**.
+
+## Flowchart
+
+```mermaid
+flowchart TD
+    classDef opire stroke:#06C2EC
+    classDef creator stroke:#12b886
+    classDef programmer stroke:#8D1DCD
+    classDef codeowner stroke:#E7CE1B
+    C(Creator):::creator
+    O(Opire):::opire
+    P(Programmer):::programmer
+    CO(Code Owner):::codeowner
+```
+
+```mermaid
+flowchart TD
+    classDef opire stroke:#06C2EC
+    classDef creator stroke:#12b886
+    classDef programmer stroke:#8D1DCD
+    classDef codeowner stroke:#E7CE1B
+    create_reward(Create reward in Issue):::creator --> try_to_solve(Try to solve the issue):::programmer
+    try_to_solve --> claim_rewards(Open PR and claim <br/>the rewards):::programmer
+    claim_rewards --> pay_request(Request reward payment <br/>through dashboard):::creator
+    pay_request --> multiple_programmers{Are there multiple<br/>claiming programmers?}:::opire
+    multiple_programmers --> multiple_programmers_no[No] --> can_programmer_be_paid{Can programmer<br/>receive payments?}:::opire
+    multiple_programmers --> multiple_programmers_yes[Yes] --> choose_programmer(Choose programmer):::creator --> can_programmer_be_paid
+    can_programmer_be_paid --> can_programmer_be_paid_yes[Yes] --> sum_rewards_amount[Sum of all pending creator rewards <br/> + associated costs]:::opire
+    sum_rewards_amount --> pay_from_stripe(Payment through Stripe):::creator
+    pay_from_stripe --> opire_fee(Opire Fee):::opire
+    pay_from_stripe --> programmer_payment(Programmer receives reward<br/> within 1-7 business days):::programmer
+    pay_from_stripe --> creator_is_member{Is creator a member<br/> of the organization?}:::opire -->  creator_is_not_member[No] --> codeowner_fee(Code Owner Fee):::codeowner
+    can_programmer_be_paid --> can_programmer_be_paid_no[No] --> D(Inform programmer):::opire
+    D --> H(Configure Stripe account):::programmer
+    H --> I(Request reward payment <br/>again):::programmer
+    I --> pay_request
+```

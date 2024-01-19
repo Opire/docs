@@ -8,7 +8,7 @@ Si el usuario puede recibir pagos, Opire redirige al creador a una pasarela de p
 
 En cambio, si el usuario no tiene la capacidad de recibir pagos, la plataforma informa al usuario sobre esta situación para que configure su cuenta de Stripe. Una vez configurada, el usuario tendrá que avisar al creador para que intente tramitar de nuevo el pago de la propina.
 
----
+## Gráfica de flujo
 
 ```mermaid
 flowchart TD
@@ -25,13 +25,13 @@ flowchart TD
     classDef opire stroke:#0EA7E1
     classDef creator stroke:#0EA71F
     classDef programmer stroke:#8D1DCD
-    A(Crear propina en Issue/PR):::creator --> B(Solicitar pagar propina en dashboard):::creator
-    B --> C{¿Programador puede recibir pagos?}:::opire
+    A(Crea propina en Issue/PR):::creator --> B(Solicita pagar propina <br/>en dashboard):::creator
+    B --> C{¿Programador puede <br/>recibir pagos?}:::opire
     C --> Sí --> E(Pago a través de Stripe):::creator
-    E --> F(Opire fee):::opire
-    E --> G(Programador recibe propina en 1-7 días laborables):::programmer
+    E --> F(Comisión de Opire):::opire
+    E --> G(Programador recibe propina<br/> en 1-7 días laborables):::programmer
     C --> No --> D(Avisamos al programador):::opire
-    D --> H(El programador configura su cuenta de Stripe):::programmer
-    H --> I(El programador pide que se pague la propina):::programmer
+    D --> H(Configura su <br/>cuenta de Stripe):::programmer
+    H --> I(Pide que se <br/>pague la propina):::programmer
     I --> B
 ```
