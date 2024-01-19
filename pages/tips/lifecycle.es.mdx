@@ -27,10 +27,10 @@ flowchart TD
     classDef programmer stroke:#8D1DCD
     A(Crear propina en Issue/PR):::creator --> B(Solicitar pagar propina en dashboard):::creator
     B --> C{¿Programador puede recibir pagos?}:::opire
-    C -->|Sí| E(Pago a través de Stripe):::creator
+    C --> Sí --> E(Pago a través de Stripe):::creator
     E --> F(Opire fee):::opire
     E --> G(Programador recibe propina en 1-7 días laborables):::programmer
-    C -->|No| D(Avisamos al programador):::opire
+    C --> No --> D(Avisamos al programador):::opire
     D --> H(El programador configura su cuenta de Stripe):::programmer
     H --> I(El programador pide que se pague la propina):::programmer
     I --> B

@@ -27,10 +27,10 @@ flowchart TD
     classDef programmer stroke:#8D1DCD
     A(Create tip on Issue/PR):::creator --> B(Request to pay tip in dashboard):::creator
     B --> C{Can programmer receive payments?}:::opire
-    C -->|Yes| E(Payment through Stripe):::creator
+    C --> Yes --> E(Payment through Stripe):::creator
     E --> F(Opire fee):::opire
     E --> G(Programmer receives tip in 1-7 business days):::programmer
-    C -->|No| D(Notify programmer):::opire
+    C --> No --> D(Notify programmer):::opire
     D --> H(Programmer configures Stripe account):::programmer
     H --> I(Programmer requests tip payment):::programmer
     I --> B
