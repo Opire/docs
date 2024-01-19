@@ -17,7 +17,6 @@ const CODE_OWNER_FEE = {
   percentage: 5,
 };
 
-
 const INPUT_REWARD_MAX_VALUE = 5_000;
 
 const CHART_STEP = 1;
@@ -51,21 +50,19 @@ function calculate(rewardValue: number, isCreatorMemberOfOrganization: boolean) 
   };
 }
 
-function generateRewardPriceSerie(
-  {
-    isCreatorMemberOfOrganization,
-    rewardPriceSelected,
-    minDefault,
-    maxDefault,
-    step
-  }: {
-    isCreatorMemberOfOrganization: boolean;
-    rewardPriceSelected: number;
-    minDefault: number;
-    maxDefault: number;
-    step: number;
-  }
-): {
+function generateRewardPriceSerie({
+  isCreatorMemberOfOrganization,
+  rewardPriceSelected,
+  minDefault,
+  maxDefault,
+  step,
+}: {
+  isCreatorMemberOfOrganization: boolean;
+  rewardPriceSelected: number;
+  minDefault: number;
+  maxDefault: number;
+  step: number;
+}): {
   rewardPriceSerie: number[];
   totalPriceSerie: number[];
   opireFeeSerie: number[];
@@ -147,7 +144,7 @@ export function RewardCalculator() {
 
     return legend;
   }
-
+  
 
   function getSeries() {
     const series = [];
@@ -243,7 +240,7 @@ export function RewardCalculator() {
       },
       markArea: {
         itemStyle: {
-          color: 'rgba(255, 173, 177, 0.4)',
+          color: "rgba(255, 173, 177, 0.4)",
         },
         data: [
           [
@@ -253,9 +250,9 @@ export function RewardCalculator() {
             },
             {
               xAxis: 20,
-            }
+            },
           ],
-        ]
+        ],
       },
     });
 
@@ -360,9 +357,7 @@ export function RewardCalculator() {
   return (
     <>
       <div>
-
         <div>
-
           <label htmlFor="reward_price" style={{ marginRight: "8px" }}>
             {i18n.reward}:
           </label>
@@ -389,7 +384,7 @@ export function RewardCalculator() {
 
         <br />
 
-        <div style={{ display: 'flex', alignItems: 'center' }}>
+        <div style={{ display: "flex", alignItems: "center" }}>
           <label htmlFor="is_member" style={{ marginRight: "8px" }}>
             {i18n.isMember}
           </label>
@@ -405,8 +400,8 @@ export function RewardCalculator() {
               // outline: '1px solid #ccc',
               // MozOutlineRadius: '5px',
               color: "#E7CE1B",
-              width: '20px',
-              height: '20px',
+              width: "20px",
+              height: "20px",
             }}
           />
         </div>
@@ -416,9 +411,9 @@ export function RewardCalculator() {
 
         <div
           style={{
-            display: "flex",
+            display: "grid",
             gap: "1rem",
-            gridTemplateColumns: "repeat(4, 1fr)",
+            gridTemplateColumns: "repeat(auto-fit, minmax(120px, 1fr))",
             justifyContent: "space-between",
             alignItems: "flex-end",
           }}
@@ -522,9 +517,6 @@ export function RewardCalculator() {
               {formatPriceFromUsd(compensatedStripeFee)}
             </span>
           </div>
-
-
-
         </div>
       </div>
 
@@ -587,7 +579,7 @@ function get18n(language: string) {
     es: {
       total: "Total",
       opireFee: "Comisión de Opire",
-      codeOwnerFee: "Comisión del codeowner",
+      codeOwnerFee: "Comisión del autor",
       stripeFee: "Comisión de Stripe",
       reward: "Recompensa",
       rewardPricing: "Precio de la recompensa",
