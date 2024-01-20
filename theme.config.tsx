@@ -22,7 +22,7 @@ const config: DocsThemeConfig = {
   //   link: 'https://github.com/shuding/nextra-docs-template',
   // },
   chat: {
-    link: 'https://opire.discord.com', // FIXME: add correct link
+    link: 'https://discord.gg/jWwwsHRbnJ',
   },
   editLink: {
     text: '',

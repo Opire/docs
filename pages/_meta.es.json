@@ -9,8 +9,5 @@
   "overview": "Overview",
   "rewards": "Recompensas",
   "tips": "Propinas",
-  "faq": {
-    "title": "FAQ",
-    "type": "page"
-  }
+  "faq": "Preguntas frecuentes"
 }
