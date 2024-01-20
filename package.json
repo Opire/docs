@@ -9,7 +9,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@tabler/icons": "^1.95.1",
+    "@tabler/icons-react": "2.46.0",
     "echarts-for-react": "^3.0.2",
     "next": "^13.0.6",
     "nextra": "latest",
