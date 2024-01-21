@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import ReactEcharts from "echarts-for-react";
 import { useRouter } from "next/router";
+import { RewardPricingChart } from "./RewardPricingChart";
 
 const STRIPE_FEE = {
   fixed: 0.35,
@@ -144,7 +145,7 @@ export function RewardCalculator() {
 
     return legend;
   }
-  
+
 
   function getSeries() {
     const series = [];
@@ -523,7 +524,9 @@ export function RewardCalculator() {
       <br />
       <br />
 
-      <ReactEcharts option={option} style={{ height: "500px" }} />
+      {/* <ReactEcharts option={option} style={{ height: "500px" }} /> */}
+
+      <RewardPricingChart isCreatorMemberOfOrganization={isMember} rewardPriceSelected={debouncedRewardValue} />
     </>
   );
 }
