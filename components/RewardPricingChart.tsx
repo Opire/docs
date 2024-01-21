@@ -1,6 +1,7 @@
 import ReactEcharts from "echarts-for-react";
 import { useRouter } from "next/router";
 import { calculateRewardAmounts } from "../lib/calculateRewardAmounts";
+import { formatPriceFromUsd } from "../lib/formatPriceFromUsd";
 
 interface RewardAmountsSeries {
   rewardPriceSerie: number[];
@@ -28,9 +29,13 @@ export function RewardPricingChart({ rewardPriceSelected, isCreatorMemberOfOrgan
   const series = getSeries({ i18n, amountsSelected, rewardAmounts: rewardAmountsSeries });
   const legend = getLegend(i18n);
 
-  const rewardSerie = series.find((serie) => serie.name === i18n.reward)
-  console.log(rewardSerie)
-  const option = getOption({ legend, rewardSerie, series, title: i18n.rewardPricing, xAxisName: i18n.reward })
+  const option = getOption({
+    legend,
+    rewardSerie: rewardAmountsSeries.rewardPriceSerie,
+    series,
+    title: i18n.rewardPricing,
+    xAxisName: i18n.reward
+  })
 
   return (
     <>
@@ -70,7 +75,7 @@ function generateRewardAmountsSeries({
   const stripeFeeSerie: number[] = [];
   const codeOwnerFeeSerie: number[] = [];
 
-  for (let i = Math.round(rewardPriceSelected - 20); i <= Math.round(rewardPriceSelected + 20); i += 0.1) {
+  for (let i = rewardPriceSelected - 20; i <= rewardPriceSelected + 20; i += 0.1) {
     const { total, opireFee, codeOwnerFee, compensatedStripeFee, reward } = calculateRewardAmounts(i, isCreatorMemberOfOrganization);
 
     rewardPriceSerie.push(reward);
@@ -81,24 +86,22 @@ function generateRewardAmountsSeries({
   }
 
   return {
-    rewardPriceSerie: Array.from(new Set(rewardPriceSerie)).sort((a, b) => a - b),
-    totalPriceSerie: Array.from(new Set(totalPriceSerie)).sort((a, b) => a - b),
-    opireFeeSerie: Array.from(new Set(opireFeeSerie)).sort((a, b) => a - b),
-    stripeFeeSerie: Array.from(new Set(stripeFeeSerie)).sort((a, b) => a - b),
-    codeOwnerFeeSerie: Array.from(new Set(codeOwnerFeeSerie)).sort((a, b) => a - b),
+    rewardPriceSerie: rewardPriceSerie,
+    totalPriceSerie: totalPriceSerie,
+    opireFeeSerie: opireFeeSerie,
+    stripeFeeSerie: stripeFeeSerie,
+    codeOwnerFeeSerie: codeOwnerFeeSerie,
   };
 }
 
 function getOption({ title, xAxisName, legend, series, rewardSerie }: { title: string, xAxisName: string, legend: string[], series, rewardSerie }) {
-  console.log({
-    rewardSerie
-  })
   return {
     title: {
       text: title,
     },
     tooltip: {
       trigger: "axis",
+      valueFormatter: (value) => formatPriceFromUsd(value)
     },
     toolbox: {
       feature: {
@@ -117,12 +120,15 @@ function getOption({ title, xAxisName, legend, series, rewardSerie }: { title: s
       right: 10, // Adjust the right value as needed
     },
     xAxis: {
-      // type: 'log',
       name: xAxisName,
-      data: rewardSerie.data,
+      data: rewardSerie,
+      show: false,
     },
     yAxis: {
       type: "value",
+      axisLabel: {
+        formatter: '${value}'
+      }
     },
     series,
   }
@@ -275,7 +281,7 @@ function getSeries({ i18n, amountsSelected, rewardAmounts }: { i18n, amountsSele
       markPoint: {
         data: [
           {
-            xAxis: amountsSelected.reward,
+            xAxis: 200, // (20 + 20) * 10 // 20 puntos hacia la derecha + 20 puntos hacia la izquierda * 10 (0,1 steps) puntos por cada punto
             yAxis: amountsSelected.codeOwnerFee,
             itemStyle: {
               color: "white",
@@ -317,7 +323,6 @@ function get18n(language: string) {
     stripeFee: "Stripe fee",
     reward: "Reward",
     rewardPricing: "Reward pricing",
-    isMember: "Are you member of the organization?",
     belowMin: "Below min.",
   };
 
@@ -330,7 +335,6 @@ function get18n(language: string) {
       stripeFee: "Comisión de Stripe",
       reward: "Recompensa",
       rewardPricing: "Precio de la recompensa",
-      isMember: "¿Eres miembro de la organización?",
       belowMin: "Inválido",
     },
   };
