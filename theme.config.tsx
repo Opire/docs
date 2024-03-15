@@ -17,10 +17,14 @@ const config: DocsThemeConfig = {
   search: {
     placeholder: SearchPlaceholder
   },
-  logo: <span>Opire</span>,
-  // project: {
-  //   link: 'https://github.com/shuding/nextra-docs-template',
-  // },
+  logo:
+    <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+      <img src={'/opire_logo.svg'} style={{ width: '36px', height: '36px' }} />
+
+      <span>
+        Opire
+      </span>
+    </div >,
   chat: {
     link: 'https://discord.gg/jWwwsHRbnJ',
   },
@@ -49,6 +53,7 @@ const config: DocsThemeConfig = {
       <meta property="og:description" content="With Opire, anyone can create rewards for open source projects and grow their community, while developers can solve issues and earn the associated rewards." />
 
       <link rel="canonical" href="https://docs.opire.dev/overview/introduction" />
+      <link rel="shortcut icon" href="/opire_logo.svg" />
     </>
   ),
   // primaryHue: 279, // 84? 180?
