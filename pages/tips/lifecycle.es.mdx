@@ -1,0 +1,35 @@
+# Ciclo de vida
+
+En Opire, el ciclo de vida de una propina se inicia cuando un usuario decide agradecer los esfuerzos de otro usuario. Este proceso comienza al crear una propina asociada a una *Issue* o Pull Request (PR) utilizando [nuestros comandos](/es/overview/commands#dar-propina-a-un-usuario).
+
+El creador, después de crear la propina, puede iniciar el pago de la misma a través del dashboard de Opire. En este punto, la plataforma realiza una verificación para determinar si el usuario destinatario de la propina tiene la capacidad de recibir pagos.
+
+Si el usuario puede recibir pagos, Opire redirige al creador a una pasarela de pago de Stripe. El precio final a pagar será el de la propina más los [costes asociados](/es/tips/pricing#precio-mínimo-y-costes). Tras finalizar el pago, el usuario recibe la propina aproximadamente en un plazo de 1-7 días laborables. En cambio, si el usuario no tiene la capacidad de recibir pagos, la plataforma informa al usuario sobre esta situación para que configure su cuenta de Stripe. Una vez configurada, el usuario tendrá que avisar al creador para que intente tramitar de nuevo el pago de la propina.
+
+## Gráfica de flujo
+
+```mermaid
+flowchart TD
+    classDef opire stroke:#0EA7E1
+    classDef creator stroke:#0EA71F
+    classDef programmer stroke:#8D1DCD
+    C(Creador):::creator
+    O(Opire):::opire
+    P(Programador):::programmer
+```
+
+```mermaid
+flowchart TD
+    classDef opire stroke:#0EA7E1
+    classDef creator stroke:#0EA71F
+    classDef programmer stroke:#8D1DCD
+    A(Crea propina en Issue/PR):::creator --> B(Solicita pagar propina <br/>en dashboard):::creator
+    B --> C{¿Programador puede <br/>recibir pagos?}:::opire
+    C --> Sí --> E(Pago a través de Stripe):::creator
+    E --> F(Comisión de Opire):::opire
+    E --> G(Programador recibe propina<br/> en 1-7 días laborables):::programmer
+    C --> No --> D(Avisamos al programador):::opire
+    D --> H(Configura su <br/>cuenta de Stripe):::programmer
+    H --> I(Pide que se <br/>pague la propina):::programmer
+    I --> B
+```

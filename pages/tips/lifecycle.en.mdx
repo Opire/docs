@@ -1,0 +1,37 @@
+# Lifecycle
+
+At Opire, the lifecycle of a tip begins when a user decides to acknowledge the efforts of another user. This process starts by creating a tip associated with an Issue or Pull Request (PR) using [our commands](/overview/commands#tip-a-user).
+
+After creating the tip, the creator can initiate the payment through the Opire dashboard. At this point, the platform performs a verification to determine if the user receiving the tip has the capability to accept payments.
+
+If the user can receive payments, Opire redirects the creator to a Stripe payment gateway. The final amount to be paid will be the tip amount plus the [associated costs](/tips/pricing#minimum-price-and-costs). After completing the payment, the user receives the tip within approximately 1-7 business days.
+
+However, if the user cannot receive payments, the platform informs the user about this situation to configure their Stripe account. Once configured, the user needs to notify the creator to attempt the tip payment again.
+
+## Flowchart
+
+```mermaid
+flowchart TD
+    classDef opire stroke:#0EA7E1
+    classDef creator stroke:#0EA71F
+    classDef programmer stroke:#8D1DCD
+    C(Creator):::creator
+    O(Opire):::opire
+    P(Programmer):::programmer
+```
+
+```mermaid
+flowchart TD
+    classDef opire stroke:#0EA7E1
+    classDef creator stroke:#0EA71F
+    classDef programmer stroke:#8D1DCD
+    A(Create tip on Issue/PR):::creator --> B(Request to pay tip<br/> in dashboard):::creator
+    B --> C{Can programmer <br/>receive payments?}:::opire
+    C --> Yes --> E(Payment through Stripe):::creator
+    E --> F(Opire fee):::opire
+    E --> G(Programmer receives tip<br/> in 1-7 business days):::programmer
+    C --> No --> D(Notify programmer):::opire
+    D --> H(Configures Stripe account):::programmer
+    H --> I(Requests tip payment):::programmer
+    I --> B
+```

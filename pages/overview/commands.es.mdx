@@ -1,0 +1,62 @@
+import { InfoPanel } from '../../components/InfoPanel';
+import { DimmedText } from '../../components/DimmedText';
+
+# Comandos
+
+Estos son los comandos que se pueden utilizar dentro de aquellos repositorios que tengan [nuestra app instalada](/overview/install-app).
+
+<br/>
+<InfoPanel>
+Para usar nuestros comandos no es necesario que te hayas registrado en Opire. Si un repositorio ha instalado nuestra app, cualquiera puede utilizar nuestros comandos.
+
+Una vez hayas hecho login por primera vez, sincronizaremos la información con tu cuenta para mostrarte el resultado de las interacciones que hayas realizado hasta el momento a través de nuestros comandos.
+</InfoPanel>
+
+## Crear recompensa
+
+> /reward [cantidad]
+
+<br/>
+<DimmedText>**Ejemplo:** `/reward 20`</DimmedText>
+<br/><br/>
+
+<span>Crea una recompensa con la cantidad en dólares para la issue donde se hizo el comentario. Cualquiera puede crear recompensas si el repositorio tiene la aplicación de Opire instalada. Se pueden crear múltiples recompensas para la misma issue, y una misma issue puede tener recompensas de diferentes creadores.</span>
+<br/><br/>
+<InfoPanel>Este comando se puede usar **al crear un comentario** en una issue, y en el misma descripción de la issue **a la hora de crearla**. No funcionará en cualquier otro escenario (por ejemplo, al editar un comentario o la descripción de la issue).</InfoPanel>
+
+## Intentar resolver la *issue*
+
+> /try
+
+<br/>
+<DimmedText>**Ejemplo:** `/try`</DimmedText>
+<br/><br/>
+
+<span>Indica que vas a intentar resolver la issue con la intención de reclamar la recompensa. Si no eres el primero, te mostraremos el listado de desarrolladores que también lo están intentando en caso de que queráis organizaros.</span>
+<br/><br/>
+<InfoPanel>Este comando se puede usar **al crear un comentario** en una issue. No funcionará en cualquier otro escenario (por ejemplo, al editar un comentario o usándolo en una PR).</InfoPanel>
+
+
+## Reclamar las recompensas asociadas a una *issue*
+
+> /claim #[número de la issue]
+
+<br/>
+<DimmedText>**Ejemplo:** `/claim #27`</DimmedText>
+<br/><br/>
+
+<span>Reclama las recompensas asociadas a la issue mencionada. Se les notifacará a los creadores de las recompensas para que revisen tu PR y realicen el pago correspondiente.</span>
+<br/><br/>
+<InfoPanel>Este comando se puede usar **al crear un comentario** en una PR, y en la misma descripción de la PR **a la hora de crearla**. No funcionará en cualquier otro escenario (por ejemplo, al editar un comentario o la descripción de la PR, o al escribir un comentario en una issue).</InfoPanel>
+
+## Dar propina a un usuario
+
+> /tip [cantidad] @[usuario]
+
+<br/>
+<DimmedText>**Ejemplo:** `/tip 10 @nabby27`</DimmedText>
+<br/><br/>
+
+<span>Esto crea una propina con la cantidad en dólares para el usuario mencionado. En tu dashboard puedes [pagar tus propinas](https://app.opire.dev/dashboard/creator/tips) o [comprobrobar las propinas que has recibido](https://app.opire.dev/dashboard/programmer/tips).</span>
+<br/><br/>
+<InfoPanel>Este comando se puede usar **al crear un comentario** en una PR/issue, y en la misma descripción de la PR/issue **a la hora de crearla**. No funcionará en cualquier otro escenario (por ejemplo, al editar un comentario o la descripción de la PR/issue).</InfoPanel>

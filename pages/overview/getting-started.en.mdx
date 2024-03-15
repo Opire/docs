@@ -1,0 +1,68 @@
+import { DimmedText } from '../../components/DimmedText';
+import { Steps } from 'nextra/components';
+
+# Getting Started
+
+## As a Code Owner
+
+<Steps>
+
+### Install the app
+
+<DimmedText>The [Opire app](/overview/install-app) allows any user to use Opire commands in repositories where it's installed, enabling interaction with the Opire platform without leaving your GitHub repository.</DimmedText>
+<br/><br/>
+<DimmedText>We recommend notifying your community that you are using Opire, so they can create rewards themselves or keep an eye on resolving issues. You can modify the `README.md` of the repositories, communicate it in the community forum, announce it on Discord, etc.</DimmedText>
+
+### Set up the organization's Stripe account
+
+<DimmedText>If someone external to your project creates rewards and a programmer claims them, you will be elegible for receive a [% of the reward](/rewards/pricing#percentage-for-code-owner) as acknowledgment for your contribution as the code owner.</DimmedText>
+<br/><br/>
+<DimmedText>In order to access this payment through Opire, it is **essential** to complete the setup of your organization's payment platform. Any organization member can navigate to the [settings page](https://app.opire.dev/settings) and initiate the onboarding process with Stripe. By clicking the corresponding button for your organization, an email will be sent with instructions to follow. If you don't complete this process, you won't be able to receive the mentioned compensation.</DimmedText>
+
+### Create your first reward (or let others create it for you)
+
+<DimmedText>If you are going to create rewards in your own repositories, check the section ["As a Reward Creator"](/overview/getting-started#as-a-reward-creator).</DimmedText>
+
+</Steps>
+
+## As a Reward Creator
+
+<Steps>
+
+### Create your first reward
+
+<DimmedText>With Opire, **anyone can create rewards** in repositories that have the app installed thanks to [our commands](/overview/commands#create-reward). Rewards can start [from $20](/rewards/pricing#minimum-price-and-costs). In addition to adding rewards to issues, anyone can appreciate a user's effort with tips starting [from $1](/tips/pricing#minimum-price-and-costs).</DimmedText>
+<br/><br/>
+<DimmedText>An issue can have associated [multiple rewards](/rewards/lifecycle#multiple-rewards), whether it's the same user creating them or multiple contributors providing different amounts: **at the time of payment, each user will be responsible for paying their share**.</DimmedText>
+<br/><br/>
+<DimmedText>If an external person to the repository organization creates a reward, **the organization will [receive a percentage](/rewards/pricing#percentage-for-code-owner)** when it's paid to the programmer.</DimmedText>
+
+### Pay when someone claims your rewards associated with the issue
+
+<DimmedText>Once the programmer has claimed the rewards for the issue and it has been verified that the proposed change meets expectations, you can pay the rewards you have created for that issue from [your dashboard](https://app.opire.dev/dashboard/creator/rewards). In case there are multiple programmers who have claimed the same issue, you can choose which one to pay. It is **the developer's responsibility to ensure that their account is correctly configured** to receive payments.</DimmedText>
+<br/><br/>
+<DimmedText>This is the moment when the reward transfer will take place along with the charging of the [associated costs](/rewards/pricing#minimum-price-and-costs).</DimmedText>
+<br/><br/>
+<DimmedText>If [multiple people create rewards for the same issue](/rewards/lifecycle#multiple-creators), each creator will be charged the corresponding amount so they'll only pay the sum of the rewards they have created.</DimmedText>
+
+</Steps>
+
+## As a Developer
+
+<Steps>
+### Set up your Stripe account
+
+<DimmedText>To receive payments through Opire, you need to configure the payment platform in [your settings](https://app.opire.dev/settings). Failure to do so will prevent reward creators from compensating you for your great effort.</DimmedText>
+
+### Find a rewarded issue and try to solve it
+
+<DimmedText>[On our platform](https://app.opire.dev), you can search through all available rewards based on technology, price, etc. When you find an issue that you believe you can solve, [try it](/overview/commands#try-to-solve-the-issue) to let the world know that you intend to claim the associated rewards after you solve it.</DimmedText>
+
+### Create a PR and claim the reward
+
+<DimmedText>Once you have the solution to the issue, create a PR and use [our commands](/overview/commands#claim-rewards-associated-with-an-issue) to claim the associated rewards.</DimmedText>
+<br/><br/>
+<DimmedText>This doesn't mean that you will be paid automatically. Reward creators will pay you when they confirm that your solution meets the requirements defined in the issue.</DimmedText>
+<br/><br/>
+<DimmedText>Since the same issue can have multiple rewards associated from different creators, each of them will pay their share separately (possibly at different times). In [your dashboard](https://app.opire.dev/dashboard/programmer/rewards), you can always see the pending amount for the rewards you have claimed.</DimmedText>
+</Steps>

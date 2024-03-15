@@ -1,0 +1,39 @@
+import { TipCalculator } from '../../components/TipCalculator';
+import { InfoPanel } from '../../components/InfoPanel';
+
+# Precios
+
+<br/>
+
+<InfoPanel>**Los desarrolladores se llevan el 100% de la propina.** Los costes asociados se añaden a la propina, resultando en el precio final a pagar.</InfoPanel>
+
+<br/>
+
+## Divisas
+
+En Opire, todos los precios están reflejados en **dólares estadounidense (USD)**. Por tanto, a la hora de crear propinas no es necesario indicar la divisa de la cantidad: siempre serán USD.
+
+La elección de utilizar una divisa internacional facilita la comparación del valor real en relación con tu moneda local. Además, esta elección brinda la ventaja de que los desarrolladores pueden recibir propinas de cualquier parte del mundo sin la necesidad de preocuparse por las complicaciones de las distintas divisas.
+
+Este enfoque implica que todas las transacciones se llevarán a cabo en dólares estadounidenses. Cuando un usuario reciba un pago, la cantidad se reflejará en la moneda que acepte su banco. Si su banco acepta USD, el usuario recibirá el monto en USD. En el caso de que el banco solo acepte una moneda diferente, como euros (€), el usuario recibirá la equivalencia en base al tipo de cambio en el momento de la transacción, un proceso que Stripe se encarga de realizar automáticamente. Esta simplicidad asegura una experiencia fluida y sin complicaciones para nuestros usuarios, independientemente de su ubicación o moneda preferida.
+
+## Método de pago
+
+Opire utiliza Stripe como plataforma de pagos. Por tanto, podrás pagar con tantos métodos de pago como Stripe te ofrezca.
+
+Cuando creas una propina en Opire, no es necesario introducir tu método de pago de inmediato. Puedes postponer el pago y proporcionar tus datos a Stripe solo cuando estés listo para realizar la transacción. Para pagar propinas pendientes, simplemente dirígete a tu panel de [creador](https://app.opire.dev/dashboard/creator/tips).
+
+## Precio mínimo y costes
+
+Puedes empezar a crear propinas **desde tan solo $1**.
+
+El coste total a pagar consistirá en la suma de la cantidad de la propina, junto al **fee de Stripe ($0.35 + 5.25%)** y **nuestro fee (20% de la propina)**.
+
+<br/>
+<InfoPanel>Nuestro fee es **significativamente más bajo en las recompensas (10%)**, dado que queremos apostar por un entorno colaborativo donde tanto desarrolladores como autores de código abierto puedan vivir del open-source.</InfoPanel>
+<br/>
+
+## Calculadora
+<br/>
+
+<TipCalculator/>

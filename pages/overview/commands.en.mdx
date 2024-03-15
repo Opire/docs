@@ -1,0 +1,61 @@
+import { InfoPanel } from '../../components/InfoPanel';
+import { DimmedText } from '../../components/DimmedText';
+
+# Commands
+
+These are the commands that can be used within repositories that have [our app installed](/overview/install-app).
+
+<br/>
+<InfoPanel>
+To be able to use our commands, it's not necessary for you to have registered on Opire. If a repository has installed our app, anyone can use our commands.
+
+Once you have logged in for the first time, we will synchronize the information with your account to show you the results of the interactions you have made so far through our commands (created rewards, etc).
+</InfoPanel>
+
+## Create Reward
+
+> /reward [amount]
+
+<br/>
+<DimmedText>**Example:** `/reward 20`</DimmedText>
+<br/><br/>
+
+<span>Create a reward with the specified amount in dollars for the issue where the comment was made. Anyone can create rewards if the repository has the Opire app installed. Multiple rewards can be created for the same issue, and a single issue can have rewards from different creators.</span>
+<br/><br/>
+<InfoPanel>This command can be used **when creating a comment** on an issue and in the description of the issue **when creating it**. It will not work in any other scenario (for example, when editing a comment or the description of the issue).</InfoPanel>
+
+## Try to Solve the Issue
+
+> /try
+
+<br/>
+<DimmedText>**Example:** `/try`</DimmedText>
+<br/><br/>
+
+<span>Indicate that you are going to try to solve the issue with the intention of claiming the reward. If you are not the first one, we will show you the list of developers who are also trying in case you want to organize yourselves.</span>
+<br/><br/>
+<InfoPanel>This command can be used **when creating a comment** on an issue. It will not work in any other scenario (for example, when editing a comment or using it in a PR).</InfoPanel>
+
+## Claim Rewards Associated with an Issue
+
+> /claim #[issue number]
+
+<br/>
+<DimmedText>**Example:** `/claim #27`</DimmedText>
+<br/><br/>
+
+<span>Claim the rewards associated with the mentioned issue. The reward creators will be notified to review your PR and make the corresponding payment.</span>
+<br/><br/>
+<InfoPanel>This command can be used **when creating a comment** on a PR and in the same description of the PR **when creating it**. It will not work in any other scenario (for example, when editing a comment or the description of the PR, or when writing a comment on an issue).</InfoPanel>
+
+## Tip a User
+
+> /tip [amount] @[user]
+
+<br/>
+<DimmedText>**Example:** `/tip 10 @nabby27`</DimmedText>
+<br/><br/>
+
+<span>This creates a tip with the specified amount in dollars for the mentioned user. On your dashboard, you can [pay your tips](https://app.opire.dev/dashboard/creator/tips) or [check the tips you have received](https://app.opire.dev/dashboard/programmer/tips).</span>
+<br/><br/>
+<InfoPanel>This command can be used **when creating a comment** on a PR/issue and in the same description of the PR/issue **when creating it**. It will not work in any other scenario (for example, when editing a comment or the description of the PR/issue).</InfoPanel>

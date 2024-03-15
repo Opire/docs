@@ -1,0 +1,13 @@
+{
+  "*": {
+    "theme": {
+      "breadcrumb": false,
+      "toc": true,
+      "layout": "default"
+    }
+  },
+  "overview": "Overview",
+  "rewards": "Rewards",
+  "tips": "Tips",
+  "faq": "FAQ"
+}
