@@ -14,6 +14,7 @@ function SearchPlaceholder() {
 }
 
 const config: DocsThemeConfig = {
+  darkMode: true,
   search: {
     placeholder: SearchPlaceholder
   },
@@ -25,14 +26,12 @@ const config: DocsThemeConfig = {
         Opire
       </span>
     </div >,
+  docsRepositoryBase: 'https://github.com/Opire/docs/blob/main',
+  project: {
+    link: 'https://github.com/opire/docs',
+  },
   chat: {
     link: 'https://discord.gg/jWwwsHRbnJ',
-  },
-  editLink: {
-    component: () => <></>,
-  },
-  feedback: {
-    content: ''
   },
   useNextSeoProps() {
     return {
@@ -56,12 +55,10 @@ const config: DocsThemeConfig = {
       <link rel="shortcut icon" href="/opire_logo.svg" />
     </>
   ),
-  // primaryHue: 279, // 84? 180?
   primaryHue: {
     dark: 190,
     light: 215,
   },
-  // docsRepositoryBase: 'https://github.com/shuding/nextra-docs-template',
   // banner: {
   //   dismissible: true,
   //   key: 'example-banner',
