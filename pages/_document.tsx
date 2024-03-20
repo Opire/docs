@@ -1,6 +1,5 @@
 import Document, { Html, Head, Main, NextScript, DocumentContext, DocumentInitialProps } from "next/document";
 import { inject } from '@vercel/analytics';
-inject();
 
 class MyDocument extends Document {
     static async getInitialProps(
@@ -10,7 +9,10 @@ class MyDocument extends Document {
 
         return initialProps
     };
+
     render() {
+        inject();
+
         return (
             <Html>
                 <Head />
