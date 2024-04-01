@@ -10,7 +10,7 @@ const STRIPE_FEE = {
 };
 
 const OPIRE_FEE = {
-  percentage: 20,
+  percentage: 10,
 };
 
 const INPUT_TIP_MAX_VALUE = 2_000;

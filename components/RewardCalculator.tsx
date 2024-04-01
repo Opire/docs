@@ -10,7 +10,7 @@ const STRIPE_FEE = {
 };
 
 const OPIRE_FEE = {
-  percentage: 10,
+  percentage: 4,
 };
 
 const CODE_OWNER_FEE = {
