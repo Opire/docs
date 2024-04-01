@@ -1,0 +1,47 @@
+# Contributing to Opire Docs
+
+## Setting up the development environment
+
+### Prerequisite
+
+The Opire documentation uses [Nextra](https://nextra.site/). But this doesn't mean that you have to install specific things like node, npm, nvm or things like that. We use docker compose for development. You can use node if you want but we recommend using docker to have the same environment.
+
+- `node` v18
+- `npm`
+
+or
+
+- `docker compose`
+- `Make` (optionally)
+
+Optionally we use Make to facilitate the common commands we use with docker compose. You can see the available commands on [Makefile](https://github.com/Opire/docs/blob/main/Makefile).
+
+### First steps
+
+#### Install dependencies
+
+After cloning the repository you have to install the dependencies with one of the following commands:
+
+```sh
+make install # if you are using make with docker compose
+docker compose run --rm opire_docs npm install # if you are using docker compose only
+npm install # if you are using npm and node directly
+```
+
+#### Run the dev server
+
+To start developing you can run the dev server that open the project in port `3002` with one of the following commands:
+
+```sh
+make dev # if you are using make with docker compose
+docker compose run --rm opire_docs npm run dev # if you are using docker compose only
+npm run dev # if you are using npm and node directly
+```
+
+## How to contribute code
+
+1. Clone the repo to your machine.
+2. Create a new branch locally.
+3. Make the changes in the code.
+4. Push your branch.
+5. Create a PR to `main` with a clear description and title.
