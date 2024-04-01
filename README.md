@@ -21,21 +21,21 @@ Opire is a **rewards platform for software developers**. With Opire, anyone can 
 
 ## 🌍 Community
 
-<div style="display: flex; justify-content: space-around; padding: 20px 0; height: 50px">
+<div align="center">
 <a href="https://discord.gg/jWwwsHRbnJ" target="_blank">
-    <img src="./public/rrss_logos/discord.png" alt="Discord logo">
+    <img src="./public/rrss_logos/discord.png" alt="Discord logo" style="width: 10%">
 </a>
 <a href="https://www.reddit.com/r/opire" target="_blank">
-    <img src="./public/rrss_logos/reddit.svg" alt="Reddit logo">
+    <img src="./public/rrss_logos/reddit.svg" alt="Reddit logo" style="width: 10%">
 </a>
 <a href="https://twitter.com/opire_dev" target="_blank">
-    <img src="./public/rrss_logos/twitter-x.png" alt="Twitter logo">
+    <img src="./public/rrss_logos/twitter-x.png" alt="Twitter logo" style="width: 10%">
 </a>
 <a href="https://www.threads.net/@opiredev" target="_blank">
-    <img src="./public/rrss_logos/threads.png" alt="Threads logo">
+    <img src="./public/rrss_logos/threads.png" alt="Threads logo" style="width: 10%">
 </a>
 <a href="https://www.linkedin.com/company/opire" target="_blank">
-    <img src="./public/rrss_logos/linkedIn.png" alt="LinkedIn logo">
+    <img src="./public/rrss_logos/linkedIn.png" alt="LinkedIn logo" style="width: 10%">
 </a>
 </div>
 
