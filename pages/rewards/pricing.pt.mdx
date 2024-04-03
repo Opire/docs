@@ -1,0 +1,54 @@
+import { InfoPanel } from '../../components/InfoPanel';
+import { DimmedText } from '../../components/DimmedText';
+import { RewardCalculator } from '../../components/RewardCalculator';
+
+# Preços
+
+<br/>
+
+<InfoPanel>**Os desenvolvedores recebem 100% das recompensas.** Os custos associados são cobrados além do valor da recompensa, resultando no preço final a ser pago.</InfoPanel>
+
+<br/>
+
+## Moedas
+
+Na Opire, todos os preços são refletidos em **Dólares Americanos (USD)**. Portanto, quando se trata de recompensas, não é necessário especificar a moeda do valor; será sempre USD.
+
+A decisão de usar uma moeda internacional facilita a comparação do valor real em relação à sua moeda local. Além disso, essa escolha oferece a vantagem de que os desenvolvedores podem receber recompensas de qualquer lugar do mundo sem precisar se preocupar com as complicações de diferentes moedas.
+
+Esse enfoque implica que todas as transações serão realizadas em USD. Quando um usuário recebe um pagamento, o valor será refletido na moeda aceita pelo banco deles. Se o banco aceitar USD, o usuário receberá o valor em USD. No caso de o banco aceitar apenas uma moeda diferente, como euros (€), o usuário receberá o equivalente com base na taxa de câmbio no momento da transação — um processo automaticamente tratado pelo Stripe. Essa simplicidade garante uma experiência tranquila e sem complicações para nossos usuários, independentemente de sua localização ou moeda preferida.
+
+## Método de Pagamento
+
+A Opire utiliza o Stripe como plataforma de pagamento. Portanto, você pode pagar com qualquer método de pagamento que o Stripe forneça.
+
+Ao criar uma recompensa na Opire, não é necessário adicionar seu método de pagamento imediatamente. Você pode atrasar o pagamento e fornecer seus dados ao Stripe apenas quando estiver pronto para concluir a transação. Para pagar recompensas pendentes, vá para seu [painel de criador](https://app.opire.dev/dashboard/creator/rewards).
+
+## Preço Mínimo e Custos
+
+Você pode começar a criar recompensas **a partir de $20**.
+
+<br/>
+<InfoPanel>A Opire considera que uma recompensa deve ser **pelo menos $20** dada o **esforço e tempo** que o desenvolvedor deve dedicar ao enfrentar qualquer tarefa <DimmedText>(entendendo o problema, avaliando diferentes soluções, implementação, fazer quaisquer alterações/sugestões que possam surgir durante os PRs, etc)</DimmedText></InfoPanel>
+<br/>
+
+Geralmente, o custo total a ser pago consistirá no valor da recompensa, mais a **taxa do Stripe ($0.35 + 5.25%)** e **nossa taxa (4% da recompensa)**.
+
+### Porcentagem para o Dono do Código
+
+As recompensas podem ser criadas por qualquer pessoa/organização. Portanto, os proprietários de código (ou mantenedores) também podem ser os criadores de recompensas. Quando isso acontece, os custos associados permanecem inalterados em relação ao que foi visto na seção anterior.
+
+No entanto, quando o criador da recompensa é alguém externo à organização, os custos associados incluirão um **5% da recompensa** que irá inteiramente para a organização/pessoa que mantém o projeto onde a recompensa foi criada.
+
+<br/>
+<InfoPanel>
+Na Opire, estamos comprometidos com o software de código aberto, então acreditamos que **seus mantenedores devem ser recompensados economicamente** pelo seu esforço e influência significativos.
+
+Idealmente, gostaríamos de ver um mundo onde **qualquer pessoa possa ganhar a vida com software de código aberto** (tanto os mantenedores de código aberto quanto os desenvolvedores que colaboram com eles).
+</InfoPanel>
+<br/>
+
+## Playground
+<br/>
+
+<RewardCalculator/>

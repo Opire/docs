@@ -1,0 +1,12 @@
+{
+  "*": {
+    "theme": {
+      "breadcrumb": false,
+      "toc": true,
+      "layout": "default"
+    }
+  },
+  "introduction": "Introdução",
+  "pricing": "Preços",
+  "lifecycle": "Ciclo de Vida"
+}

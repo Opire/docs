@@ -588,6 +588,16 @@ function get18n(language: string) {
       isMember: "¿Eres miembro de la organización?",
       belowMin: "Inválido",
     },
+    pt: {
+        total: "Total",
+        opireFee: "Taxa da Opire",
+        codeOwnerFee: "Taxa do Proprietário do Código",
+        stripeFee: "Taxa da Stripe",
+        reward: "Recompensa",
+        rewardPricing: "Preço da Recompensa",
+        isMember: "É membro da organização?",
+        belowMin: "Abaixo do mínimo"
+    }
   };
 
   return i18n[language] ?? en;
