@@ -8,6 +8,7 @@ function SearchPlaceholder() {
   const map = {
     es: 'Buscar',
     en: 'Search',
+    pt: 'Procurar'
   }
 
   return map[locale] ?? map.en;
@@ -77,7 +78,8 @@ const config: DocsThemeConfig = {
   },
   i18n: [
     { locale: 'en', text: 'English' },
-    { locale: 'es', text: 'Español' }
+    { locale: 'es', text: 'Español' },
+    { locale: 'pt', text: 'Portuguese' }
   ],
 }
 

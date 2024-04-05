@@ -1,0 +1,68 @@
+import { DimmedText } from '../../components/DimmedText';
+import { Steps } from 'nextra/components';
+
+# Começando
+
+## Como Proprietário do Código
+
+<Steps>
+
+### Instale o aplicativo
+
+<DimmedText>O [aplicativo Opire](/overview/install-app) permite que qualquer usuário use comandos Opire em repositórios onde está instalado, possibilitando a interação com a plataforma Opire sem sair do seu repositório GitHub.</DimmedText>
+<br/><br/>
+<DimmedText>Recomendamos notificar sua comunidade de que você está usando o Opire, para que eles possam criar recompensas por si mesmos ou ficar de olho na resolução de problemas. Você pode modificar o `README.md` dos repositórios, comunicá-lo no fórum da comunidade, anunciá-lo no Discord, etc.</DimmedText>
+
+### Configure a conta do Stripe da organização
+
+<DimmedText>Se alguém externo ao seu projeto criar recompensas e um programador as reivindicar, você será elegível para receber um [% da recompensa](/rewards/pricing#percentage-for-code-owner) como reconhecimento pela sua contribuição como proprietário do código.</DimmedText>
+<br/><br/>
+<DimmedText>Para acessar esse pagamento através do Opire, é **essencial** completar a configuração da plataforma de pagamento da sua organização. Qualquer membro da organização pode acessar a [página de configurações](https://app.opire.dev/settings) e iniciar o processo de integração com o Stripe. Ao clicar no botão correspondente à sua organização, um e-mail será enviado com instruções a seguir. Se você não completar este processo, não poderá receber a compensação mencionada.</DimmedText>
+
+### Crie sua primeira recompensa (ou permita que outros criem por você)
+
+<DimmedText>Se você for criar recompensas em seus próprios repositórios, confira a seção ["Como Criador de Recompensas"](/overview/getting-started#as-a-reward-creator).</DimmedText>
+
+</Steps>
+
+## Como Criador de Recompensas
+
+<Steps>
+
+### Crie sua primeira recompensa
+
+<DimmedText>Com o Opire, **qualquer um pode criar recompensas** em repositórios que tenham o aplicativo instalado graças [aos nossos comandos](/overview/commands#create-reward). As recompensas podem começar [a partir de $20](/rewards/pricing#minimum-price-and-costs). Além de adicionar recompensas a problemas, qualquer um pode apreciar o esforço de um usuário com gorjetas começando [a partir de $1](/tips/pricing#minimum-price-and-costs).</DimmedText>
+<br/><br/>
+<DimmedText>Um problema pode ter [múltiplas recompensas associadas](/rewards/lifecycle#multiple-rewards), quer seja o mesmo usuário criando-as ou múltiplos colaboradores fornecendo quantias diferentes: **no momento do pagamento, cada usuário será responsável por pagar sua parte**.</DimmedText>
+<br/><br/>
+<DimmedText>Se alguém externo à organização do repositório criar uma recompensa, **a organização receberá [um percentual](/rewards/pricing#percentage-for-code-owner)** quando for pago ao programador.</DimmedText>
+
+### Pague quando alguém reivindicar suas recompensas associadas ao problema
+
+<DimmedText>Depois que o programador reivindicar as recompensas para o problema e for verificado que a mudança proposta atende às expectativas, você pode pagar as recompensas que criou para esse problema a partir do [seu painel](https://app.opire.dev/dashboard/creator/rewards). Caso haja vários programadores que reivindicaram o mesmo problema, você pode escolher qual pagar. É **responsabilidade do desenvolvedor garantir que sua conta esteja configurada corretamente** para receber pagamentos.</DimmedText>
+<br/><br/>
+<DimmedText>Este é o momento em que ocorrerá a transferência da recompensa junto com a cobrança dos [custos associados](/rewards/pricing#minimum-price-and-costs).</DimmedText>
+<br/><br/>
+<DimmedText>Se [várias pessoas criarem recompensas para o mesmo problema](/rewards/lifecycle#multiple-creators), cada criador será cobrado pelo valor correspondente, portanto, eles pagarão apenas a soma das recompensas que criaram.</DimmedText>
+
+</Steps>
+
+## Como Desenvolvedor
+
+<Steps>
+### Configure sua conta do Stripe
+
+<DimmedText>Para receber pagamentos através do Opire, você precisa configurar a plataforma de pagamento em [suas configurações](https://app.opire.dev/settings). Não fazer isso impedirá que os criadores de recompensas o compensem pelo seu grande esforço.</DimmedText>
+
+### Encontre um problema recompensado e tente resolvê-lo
+
+<DimmedText>[Em nossa plataforma](https://app.opire.dev), você pode pesquisar todas as recompensas disponíveis com base em tecnologia, preço, etc. Quando encontrar um problema que acredita poder resolver, [tente](/overview/commands#try-to-solve-the-issue) para informar ao mundo que pretende reivindicar as recompensas associadas depois de resolvê-lo.</DimmedText>
+
+### Crie um PR e reivindique a recompensa
+
+<DimmedText>Depois de ter a solução para o problema, crie um PR e use [nossos comandos](/overview/commands#claim-rewards-associated-with-an-issue) para reivindicar as recompensas associadas.</DimmedText>
+<br/><br/>
+<DimmedText>Isso não significa que você será pago automaticamente. Os criadores de recompensas pagarão quando confirmarem que sua solução atende aos requisitos definidos no problema.</DimmedText>
+<br/><br/>
+<DimmedText>Como o mesmo problema pode ter múltiplas recompensas associadas de diferentes criadores, cada um deles pagará sua parte separadamente (possivelmente em momentos diferentes). Em [seu painel](https://app.opire.dev/dashboard/programmer/rewards), você sempre pode ver o valor pendente para as recompensas que reivindicou.</DimmedText>
+</Steps>

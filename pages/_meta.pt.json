@@ -1,0 +1,13 @@
+{
+  "*": {
+    "theme": {
+      "breadcrumb": false,
+      "toc": true,
+      "layout": "default"
+    }
+  },
+  "overview": "Visão Geral",
+  "rewards": "Recompensas",
+  "tips": "Gorjetas",
+  "faq": "Perguntas Frequentes"
+}

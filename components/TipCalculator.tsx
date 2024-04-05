@@ -455,6 +455,14 @@ function get18n(language: string) {
       tipPricing: "Precio de la propina",
       belowMin: "Inválido",
     },
+    pt:{
+      total: "Total",
+      opireFee: "Comissão da Opire",
+      stripeFee: "Comissão da Stripe",
+      tip: "Gorjeta",
+      tipPricing: "Preço da gorjeta",
+      belowMin: "Abaixo do mínimo"  
+    } 
   };
 
   return i18n[language] ?? en;

@@ -1,0 +1,37 @@
+# Ciclo de Vida
+
+Na Opire, o ciclo de vida de uma dica começa quando um usuário decide reconhecer os esforços de outro usuário. Esse processo começa criando uma dica associada a um Problema ou Pull Request (PR) usando [nossos comandos](/overview/commands#tip-a-user).
+
+Após criar a dica, o criador pode iniciar o pagamento através do painel da Opire. Nesse ponto, a plataforma realiza uma verificação para determinar se o usuário que está recebendo a dica tem a capacidade de aceitar pagamentos.
+
+Se o usuário puder receber pagamentos, a Opire redireciona o criador para um gateway de pagamento Stripe. O valor final a ser pago será o valor da dica mais os [custos associados](/tips/pricing#minimum-price-and-costs). Após completar o pagamento, o usuário recebe a dica em aproximadamente 1-7 dias úteis.
+
+No entanto, se o usuário não puder receber pagamentos, a plataforma informa o usuário sobre essa situação para configurar sua conta do Stripe. Uma vez configurado, o usuário precisa notificar o criador para tentar o pagamento da dica novamente.
+
+## Diagrama de Fluxo
+
+```mermaid
+flowchart TD
+    classDef opire stroke:#0EA7E1
+    classDef creator stroke:#0EA71F
+    classDef programmer stroke:#8D1DCD
+    C(Criador):::criador
+    O(Opire):::opire
+    P(Programador):::programador
+```
+
+```mermaid
+flowchart TD
+    classDef opire stroke:#0EA7E1
+    classDef creator stroke:#0EA71F
+    classDef programmer stroke:#8D1DCD
+    A(Criar dica em Issue/PR):::criador --> B(Solicitar pagamento da dica<br/> no painel):::criador
+    B --> C{Programador pode <br/>receber pagamentos?}:::opire
+    C --> Sim --> E(Pagamento via Stripe):::criador
+    E --> F(Taxa da Opire):::opire
+    E --> G(Programador recebe dica<br/> em 1-7 dias úteis):::programador
+    C --> Não --> D(Notificar programador):::opire
+    D --> H(Configurar conta do Stripe):::programador
+    H --> I(Solicitar pagamento da dica):::programador
+    I --> B
+```
