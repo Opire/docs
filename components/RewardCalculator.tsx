@@ -589,14 +589,24 @@ function get18n(language: string) {
       belowMin: "Inválido",
     },
     pt: {
-        total: "Total",
-        opireFee: "Taxa da Opire",
-        codeOwnerFee: "Taxa do Proprietário do Código",
-        stripeFee: "Taxa da Stripe",
-        reward: "Recompensa",
-        rewardPricing: "Preço da Recompensa",
-        isMember: "É membro da organização?",
-        belowMin: "Abaixo do mínimo"
+      total: "Total",
+      opireFee: "Taxa da Opire",
+      codeOwnerFee: "Taxa do Proprietário do Código",
+      stripeFee: "Taxa da Stripe",
+      reward: "Recompensa",
+      rewardPricing: "Preço da Recompensa",
+      isMember: "É membro da organização?",
+      belowMin: "Abaixo do mínimo"
+    },
+    fr:{
+      total: "Total",
+      opireFee: "Frais Opire",
+      codeOwnerFee: "Frais du Propriétaire du Code",
+      stripeFee: "Frais Stripe",
+      reward: "Récompense",
+      rewardPricing: "Tarification de la Récompense",
+      isMember: "Est membre de l'organisation?",
+      belowMin: "Sous le minimum"
     }
   };
 

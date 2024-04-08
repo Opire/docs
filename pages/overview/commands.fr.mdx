@@ -1,0 +1,61 @@
+import { InfoPanel } from '../../components/InfoPanel';
+import { DimmedText } from '../../components/DimmedText';
+
+# Commandes
+
+Voici les commandes qui peuvent être utilisées dans les dépôts où [notre application est installée](/overview/install-app).
+
+<br/>
+<InfoPanel>
+Pour utiliser nos commandes, il n'est pas nécessaire d'être enregistré sur Opire. Si un dépôt a installé notre application, n'importe qui peut utiliser nos commandes.
+
+Après vous être connecté pour la première fois, nous synchroniserons les informations avec votre compte pour afficher les résultats des interactions que vous avez faites jusqu'à présent via nos commandes (récompenses créées, etc.).
+</InfoPanel>
+
+## Créer une Récompense
+
+> /reward [valeur]
+
+<br/>
+<DimmedText>**Exemple :** `/reward 20`</DimmedText>
+<br/><br/>
+
+<span>Créez une récompense avec la valeur spécifiée en dollars pour le problème où le commentaire a été fait. N'importe qui peut créer des récompenses si le dépôt a installé l'application Opire. Plusieurs récompenses peuvent être créées pour le même problème, et un seul problème peut avoir des récompenses de différents créateurs.</span>
+<br/><br/>
+<InfoPanel>Cette commande peut être utilisée **lors de la création d'un commentaire** sur un problème et dans la description du problème **lors de sa création**. Elle ne fonctionnera pas dans d'autres scénarios (par exemple, lors de la modification d'un commentaire ou de la description du problème).</InfoPanel>
+
+## Essayer de Résoudre le Problème
+
+> /try
+
+<br/>
+<DimmedText>**Exemple :** `/try`</DimmedText>
+<br/><br/>
+
+<span>Indiquez que vous allez essayer de résoudre le problème dans le but de réclamer la récompense. Si vous n'êtes pas le premier, nous afficherons une liste de développeurs qui essaient également, au cas où vous voudriez vous organiser.</span>
+<br/><br/>
+<InfoPanel>Cette commande peut être utilisée **lors de la création d'un commentaire** sur un problème. Elle ne fonctionnera pas dans d'autres scénarios (par exemple, lors de la modification d'un commentaire ou en l'utilisant dans une PR).</InfoPanel>
+
+## Réclamer les Récompenses Associées à un Problème
+
+> /claim #[numéro du problème]
+
+<br/>
+<DimmedText>**Exemple :** `/claim #27`</DimmedText>
+<br/><br/>
+
+<span>Réclamez les récompenses associées au problème mentionné. Les créateurs de récompenses seront notifiés pour examiner votre PR et effectuer le paiement correspondant.</span>
+<br/><br/>
+<InfoPanel>Cette commande peut être utilisée **lors de la création d'un commentaire** sur une PR et dans la même description de la PR **lors de sa création**. Elle ne fonctionnera pas dans d'autres scénarios (par exemple, lors de la modification d'un commentaire ou de la description de la PR, ou en écrivant un commentaire sur un problème).</InfoPanel>
+
+## Donner un Pourboire à un Utilisateur
+
+> /tip [valeur] @[utilisateur]
+
+<br/>
+<DimmedText>**Exemple :** `/tip 10 @nabby27`</DimmedText>
+<br/><br/>
+
+<span>Cela crée un pourboire avec la valeur spécifiée en dollars pour l'utilisateur mentionné. Sur votre tableau de bord, vous pouvez [payer vos pourboires](https://app.opire.dev/dashboard/creator/tips) ou [vérifier les pourboires que vous avez reçus](https://app.opire.dev/dashboard/programmer/tips).</span>
+<br/><br/>
+<InfoPanel>Cette commande peut être utilisée **lors de la création d'un commentaire** sur une PR/problème et dans la même description de la PR/problème **lors de sa création**. Elle ne fonctionnera pas dans d'autres scénarios (par exemple, lors de la modification d'un commentaire ou de la description de la PR/problème).</InfoPanel>
