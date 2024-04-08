@@ -1,5 +1,5 @@
-import React from 'react'
-import { DocsThemeConfig } from 'nextra-theme-docs'
+import React from 'react';
+import { DocsThemeConfig } from 'nextra-theme-docs';
 import { useRouter } from 'next/router';
 
 function SearchPlaceholder() {
@@ -8,8 +8,9 @@ function SearchPlaceholder() {
   const map = {
     es: 'Buscar',
     en: 'Search',
-    pt: 'Procurar'
-  }
+    pt: 'Procurar',
+    fr: 'Rechercher'
+  };
 
   return map[locale] ?? map.en;
 }
@@ -17,16 +18,15 @@ function SearchPlaceholder() {
 const config: DocsThemeConfig = {
   darkMode: true,
   search: {
-    placeholder: SearchPlaceholder
+    placeholder: SearchPlaceholder,
   },
-  logo:
+  logo: (
     <div style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
       <img src={'/opire_logo.svg'} style={{ width: '36px', height: '36px' }} />
 
-      <span>
-        Opire
-      </span>
-    </div >,
+      <span>Opire</span>
+    </div>
+  ),
   docsRepositoryBase: 'https://github.com/Opire/docs/blob/main',
   project: {
     link: 'https://github.com/opire/docs',
@@ -36,23 +36,42 @@ const config: DocsThemeConfig = {
   },
   useNextSeoProps() {
     return {
-      titleTemplate: 'Opire Docs - The Rewards Platform for Software Developers'
-    }
+      titleTemplate:
+        'Opire Docs - The Rewards Platform for Software Developers',
+    };
   },
   head: (
     <>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta name="robots" content="index, follow" />
 
-      <meta name="title" content="Opire - The Rewards Platform for Software Developers" />
-      <meta name="description" content="With Opire, anyone can create rewards for open source projects and grow their community, while developers can solve issues and earn the associated rewards." />
-      <meta name="keywords" content="opire, opiredev, reward, bounty, money, open source, software, programmer, community, dev, developement, issue, git, github, gitlab, pr, mr, pull request, merge request" />
+      <meta
+        name="title"
+        content="Opire - The Rewards Platform for Software Developers"
+      />
+      <meta
+        name="description"
+        content="With Opire, anyone can create rewards for open source projects and grow their community, while developers can solve issues and earn the associated rewards."
+      />
+      <meta
+        name="keywords"
+        content="opire, opiredev, reward, bounty, money, open source, software, programmer, community, dev, developement, issue, git, github, gitlab, pr, mr, pull request, merge request"
+      />
 
       <meta property="og:type" content="website" />
-      <meta property="og:title" content="Opire - The Rewards Platform for Software Developers" />
-      <meta property="og:description" content="With Opire, anyone can create rewards for open source projects and grow their community, while developers can solve issues and earn the associated rewards." />
+      <meta
+        property="og:title"
+        content="Opire - The Rewards Platform for Software Developers"
+      />
+      <meta
+        property="og:description"
+        content="With Opire, anyone can create rewards for open source projects and grow their community, while developers can solve issues and earn the associated rewards."
+      />
 
-      <link rel="canonical" href="https://docs.opire.dev/overview/introduction" />
+      <link
+        rel="canonical"
+        href="https://docs.opire.dev/overview/introduction"
+      />
       <link rel="shortcut icon" href="/opire_logo.svg" />
     </>
   ),
@@ -69,8 +88,8 @@ const config: DocsThemeConfig = {
     defaultMenuCollapseLevel: 2,
     autoCollapse: false,
     titleComponent: ({ title, type, route }) => {
-      return <>{title}</>
-    }
+      return <>{title}</>;
+    },
   },
   gitTimestamp: '',
   footer: {
@@ -79,8 +98,9 @@ const config: DocsThemeConfig = {
   i18n: [
     { locale: 'en', text: 'English' },
     { locale: 'es', text: 'Español' },
-    { locale: 'pt', text: 'Portuguese' }
+    { locale: 'pt', text: 'Portuguese' },
+    { locale: 'fr', text: 'Français' },
   ],
-}
+};
 
-export default config
+export default config;

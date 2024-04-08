@@ -1,0 +1,40 @@
+import { TipCalculator } from '../../components/TipCalculator';
+import { InfoPanel } from '../../components/InfoPanel';
+
+# Prix
+
+<br/>
+
+<InfoPanel>**Les développeurs reçoivent 100 % du pourboire.** Les coûts associés sont facturés en plus du montant du pourboire, ce qui donne le prix final à payer.</InfoPanel>
+
+<br/>
+
+## Devises
+
+Chez Opire, tous les prix sont exprimés en **dollars américains (USD)**. Par conséquent, en ce qui concerne les pourboires, il n'est pas nécessaire de spécifier la devise du montant ; il sera toujours en USD.
+
+La décision d'utiliser une devise internationale facilite la comparaison de la valeur réelle par rapport à votre devise locale. De plus, ce choix offre l'avantage aux développeurs de recevoir des pourboires de n'importe où dans le monde sans avoir à se soucier des complications liées aux différentes devises.
+
+Cette approche implique que toutes les transactions seront effectuées en USD. Lorsqu'un utilisateur reçoit un paiement, le montant sera reflété dans la devise acceptée par sa banque. Si sa banque accepte les USD, l'utilisateur recevra le montant en USD. Dans le cas où la banque n'accepte qu'une autre devise, comme l'euro (€), l'utilisateur recevra l'équivalent en fonction du taux de change au moment de la transaction - un processus automatiquement géré par Stripe. Cette simplicité garantit une expérience fluide et sans tracas pour nos utilisateurs, quel que soit leur lieu ou leur devise préférée.
+
+## Méthode de paiement
+
+Opire utilise Stripe comme plateforme de paiement. Par conséquent, vous pouvez payer avec n'importe quel moyen de paiement fourni par Stripe.
+
+Lorsque vous créez un pourboire sur Opire, il n'est pas nécessaire d'ajouter immédiatement votre moyen de paiement. Vous pouvez différer le paiement et fournir vos données à Stripe uniquement lorsque vous êtes prêt à finaliser la transaction. Pour payer les pourboires en attente, rendez-vous sur votre [tableau de bord du créateur](https://app.opire.dev/dashboard/creator/tips).
+
+## Prix minimum et coûts
+
+Vous pouvez commencer à créer des pourboires **à partir de seulement 1 $**.
+
+Le coût total à payer sera la somme du montant du pourboire, plus les **frais Stripe (0,35 $ + 5,25 %)** et **nos frais (10 % du pourboire)**.
+
+<br/>
+<InfoPanel>Nos frais sont **beaucoup plus bas pour les récompenses (4 %)**, car nous visons à soutenir un environnement collaboratif où les développeurs et les propriétaires de code peuvent prospérer dans le monde open source.</InfoPanel>
+<br/>
+
+## Espace de Jeu
+<br/>
+
+<TipCalculator/>
+

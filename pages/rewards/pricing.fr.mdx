@@ -1,0 +1,54 @@
+import { InfoPanel } from '../../components/InfoPanel';
+import { DimmedText } from '../../components/DimmedText';
+import { RewardCalculator } from '../../components/RewardCalculator';
+
+# Prix
+
+<br/>
+
+<InfoPanel>**Les développeurs reçoivent 100% des récompenses.** Les coûts associés sont facturés en plus du montant de la récompense, ce qui donne le prix final à payer.</InfoPanel>
+
+<br/>
+
+## Devises
+
+Chez Opire, tous les prix sont exprimés en **dollars américains (USD)**. Par conséquent, en ce qui concerne les récompenses, il n'est pas nécessaire de spécifier la devise du montant ; ce sera toujours en USD.
+
+La décision d'utiliser une devise internationale facilite la comparaison de la valeur réelle par rapport à votre devise locale. De plus, ce choix offre l'avantage que les développeurs peuvent recevoir des récompenses de n'importe où dans le monde sans avoir à se soucier des complications liées aux différentes devises.
+
+Cette approche implique que toutes les transactions seront effectuées en USD. Lorsqu'un utilisateur reçoit un paiement, le montant sera reflété dans la devise acceptée par sa banque. Si sa banque accepte les USD, l'utilisateur recevra le montant en USD. Dans le cas où la banque n'accepte qu'une devise différente, comme les euros (€), l'utilisateur recevra l'équivalent en fonction du taux de change au moment de la transaction - un processus automatiquement géré par Stripe. Cette simplicité garantit une expérience fluide et sans tracas pour nos utilisateurs, quel que soit leur lieu ou leur devise préférée.
+
+## Mode de paiement
+
+Opire utilise Stripe comme plateforme de paiement. Par conséquent, vous pouvez payer avec tous les modes de paiement que Stripe propose.
+
+Lorsque vous créez une récompense sur Opire, il n'est pas nécessaire d'ajouter immédiatement votre mode de paiement. Vous pouvez retarder le paiement et fournir vos données à Stripe uniquement lorsque vous êtes prêt à finaliser la transaction. Pour payer les récompenses en attente, rendez-vous sur votre [tableau de bord du créateur](https://app.opire.dev/dashboard/creator/rewards).
+
+## Prix minimum et coûts
+
+Vous pouvez commencer à créer des récompenses **à partir de 20 $**.
+
+<br/>
+<InfoPanel>Opire considère qu'une récompense devrait être **d'au moins 20 $** compte tenu de l'**effort et du temps** que le développeur doit consacrer lorsqu'il est confronté à une tâche <DimmedText>(comprendre le problème, évaluer différentes solutions, implémentation, apporter des modifications/suggestions qui peuvent survenir lors des PR, etc)</DimmedText></InfoPanel>
+<br/>
+
+En général, le coût total à payer comprendra le montant de la récompense, plus les **frais de Stripe (0,35 $ + 5,25%)** et **nos frais (4% de la récompense)**.
+
+### Pourcentage pour le propriétaire du code
+
+Les récompenses peuvent être créées par n'importe quel individu/organisation. Par conséquent, les propriétaires de code (ou les mainteneurs) peuvent également être les créateurs de récompenses. Dans ce cas, les coûts associés restent inchangés par rapport à ce qui a été vu dans la section précédente.
+
+Cependant, lorsque le créateur de la récompense est quelqu'un d'externe à l'organisation, les coûts associés incluront un **5% de la récompense** qui ira entièrement à l'organisation/personne maintenant le projet où la récompense a été créée.
+
+<br/>
+<InfoPanel>
+Chez Opire, nous nous engageons en faveur des logiciels open source, donc nous croyons que **ses mainteneurs devraient être récompensés économiquement** pour leurs efforts et leur influence significatifs.
+
+Idéalement, nous aimerions voir un monde où **n'importe qui peut gagner sa vie grâce aux logiciels open source** (à la fois les mainteneurs de logiciels open source et les développeurs qui collaborent avec eux).
+</InfoPanel>
+<br/>
+
+## Aire de jeux
+<br/>
+
+<RewardCalculator/>

@@ -462,6 +462,14 @@ function get18n(language: string) {
       tip: "Gorjeta",
       tipPricing: "Preço da gorjeta",
       belowMin: "Abaixo do mínimo"  
+    },
+    fr:{
+      total: "Total",
+      opireFee: "Commission d'Opire",
+      stripeFee: "Commission de Stripe",
+      tip: "Pourboire",
+      tipPricing: "Tarification du pourboire",
+      belowMin: "Sous le minimum"  
     } 
   };
 
