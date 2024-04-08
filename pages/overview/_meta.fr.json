@@ -1,0 +1,14 @@
+{
+  "*": {
+    "theme": {
+      "breadcrumb": false,
+      "toc": true,
+      "layout": "default"
+    }
+  },
+  "introduction": "Introduction",
+  "use-cases": "Cas d'utilisation",
+  "getting-started": "Premiers pas",
+  "install-app": "Installer l'application",
+  "commands": "Commandes"  
+}
