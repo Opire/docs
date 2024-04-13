@@ -73,6 +73,7 @@ const config: DocsThemeConfig = {
         href="https://docs.opire.dev/overview/introduction"
       />
       <link rel="shortcut icon" href="/opire_logo.svg" />
+      <script defer src="https://eu.umami.is/script.js" data-website-id="460f695b-cf3e-4bf2-8d18-1e7e8e0f5075"></script>
     </>
   ),
   primaryHue: {
