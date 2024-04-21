@@ -9,7 +9,8 @@ function SearchPlaceholder() {
     es: 'Buscar',
     en: 'Search',
     pt: 'Procurar',
-    fr: 'Rechercher'
+    fr: 'Rechercher',
+    de: 'Suchen',
   };
 
   return map[locale] ?? map.en;
@@ -101,6 +102,7 @@ const config: DocsThemeConfig = {
     { locale: 'es', text: 'Español' },
     { locale: 'pt', text: 'Portuguese' },
     { locale: 'fr', text: 'Français' },
+    { locale: 'de', text: 'Deutsch' }
   ],
 };
 

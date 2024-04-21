@@ -1,0 +1,54 @@
+import { InfoPanel } from '../../components/InfoPanel';
+import { DimmedText } from '../../components/DimmedText';
+import { RewardCalculator } from '../../components/RewardCalculator';
+
+# Preise
+
+<br/>
+
+<InfoPanel>**Entwickler erhalten 100% der Belohnungen.** Die zugehörigen Kosten werden zusätzlich zum Belohnungsbetrag erhoben, was zum endgültigen zu zahlenden Preis führt.</InfoPanel>
+
+<br/>
+
+## Währungen
+
+Bei Opire werden alle Preise in **US-Dollar (USD)** angezeigt. Daher ist es bei Belohnungen nicht erforderlich, die Währung des Betrags anzugeben; es wird immer USD sein.
+
+Die Entscheidung, eine internationale Währung zu verwenden, erleichtert den Vergleich des realen Werts in Bezug auf Ihre lokale Währung. Darüber hinaus bietet diese Wahl den Vorteil, dass Entwickler Belohnungen aus der ganzen Welt erhalten können, ohne sich um die Komplikationen verschiedener Währungen kümmern zu müssen.
+
+Dieser Ansatz bedeutet, dass alle Transaktionen in USD durchgeführt werden. Wenn ein Benutzer eine Zahlung erhält, wird der Betrag in der Währung angezeigt, die von seiner Bank akzeptiert wird. Wenn seine Bank USD akzeptiert, erhält der Benutzer den Betrag in USD. Wenn die Bank nur eine andere Währung wie Euro (€) akzeptiert, erhält der Benutzer den entsprechenden Betrag basierend auf dem Wechselkurs zum Zeitpunkt der Transaktion — ein Vorgang, der automatisch von Stripe abgewickelt wird. Diese Einfachheit garantiert unseren Benutzern eine reibungslose und problemlose Erfahrung, unabhängig von ihrem Standort oder ihrer bevorzugten Währung.
+
+## Zahlungsmethode
+
+Opire verwendet Stripe als Zahlungsplattform. Daher können Sie mit allen Zahlungsmethoden bezahlen, die Stripe anbietet.
+
+Wenn Sie eine Belohnung auf Opire erstellen, ist es nicht erforderlich, Ihre Zahlungsmethode sofort hinzuzufügen. Sie können die Zahlung verzögern und Ihre Daten erst dann an Stripe weitergeben, wenn Sie bereit sind, die Transaktion abzuschließen. Um ausstehende Belohnungen zu zahlen, gehen Sie zu Ihrem [Ersteller-Dashboard](https://app.opire.dev/dashboard/creator/rewards).
+
+## Mindestpreis und Kosten
+
+Sie können Belohnungen **ab 20 $** erstellen.
+
+<br/>
+<InfoPanel>Opire betrachtet, dass eine Belohnung **mindestens 20 $** betragen sollte, angesichts des **Aufwands und der Zeit**, die der Entwickler bei der Bewältigung einer Aufgabe aufwenden muss <DimmedText>(Verständnis des Problems, Bewertung verschiedener Lösungen, Implementierung, Durchführung von Änderungen/Vorschlägen, die während der PRs auftreten können, usw.)</DimmedText></InfoPanel>
+<br/>
+
+Im Allgemeinen besteht der zu zahlende Gesamtbetrag aus dem Belohnungsbetrag plus der **Stripe-Gebühr (0,35 $ + 5,25%)** und **unserer Gebühr (4% der Belohnung)**.
+
+### Prozentualer Anteil für Code-Besitzer
+
+Belohnungen können von Einzelpersonen/Organisationen erstellt werden. Daher können auch Code-Besitzer (oder Verwalter) die Ersteller von Belohnungen sein. Wenn dies der Fall ist, bleiben die zugehörigen Kosten unverändert, wie im vorherigen Abschnitt gesehen.
+
+Wenn jedoch der Belohnungsersteller extern zur Organisation gehört, werden die zugehörigen Kosten eine **5% der Belohnung** umfassen, die vollständig an die Organisation/Person gehen wird, die das Projekt verwaltet, in dem die Belohnung erstellt wurde.
+
+<br/>
+<InfoPanel>
+Bei Opire setzen wir uns für Open-Source-Software ein, daher sind wir der Meinung, dass **ihre Betreiber ökonomisch belohnt werden sollten** für ihren bedeutenden Einsatz und Einfluss.
+
+Idealerweise würden wir gerne eine Welt sehen, in der **jeder seinen Lebensunterhalt mit Open-Source-Software verdienen kann** (sowohl die Betreiber von Open-Source als auch die Entwickler, die mit ihnen zusammenarbeiten).
+</InfoPanel>
+<br/>
+
+## Spielplatz
+<br/>
+
+<RewardCalculator/>

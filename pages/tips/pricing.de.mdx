@@ -1,0 +1,39 @@
+import { TipCalculator } from '../../components/TipCalculator';
+import { InfoPanel } from '../../components/InfoPanel';
+
+# Preise
+
+<br/>
+
+<InfoPanel>**Entwickler erhalten 100 % des Trinkgelds.** Die anfallenden Kosten werden zusätzlich zum Trinkgeldbetrag berechnet, was den Endpreis ausmacht, der zu zahlen ist.</InfoPanel>
+
+<br/>
+
+## Währungen
+
+Bei Opire werden alle Preise in **US-Dollar (USD)** angegeben. Daher ist es beim Trinkgeldgeben nicht erforderlich, die Währung des Betrags anzugeben; es wird immer USD sein.
+
+Die Entscheidung, eine internationale Währung zu verwenden, erleichtert den Vergleich des realen Werts im Verhältnis zu Ihrer lokalen Währung. Darüber hinaus bietet diese Wahl den Vorteil, dass Entwickler Trinkgelder aus der ganzen Welt erhalten können, ohne sich um die Komplikationen verschiedener Währungen kümmern zu müssen.
+
+Dieser Ansatz bedeutet, dass alle Transaktionen in USD durchgeführt werden. Wenn ein Benutzer eine Zahlung erhält, wird der Betrag in der von seiner Bank akzeptierten Währung angezeigt. Wenn seine Bank USD akzeptiert, erhält der Benutzer den Betrag in USD. Falls die Bank nur eine andere Währung akzeptiert, wie z.B. Euro (€), erhält der Benutzer den entsprechenden Betrag basierend auf dem Wechselkurs zum Zeitpunkt der Transaktion — ein Prozess, der automatisch von Stripe durchgeführt wird. Diese Einfachheit gewährleistet eine reibungslose und problemlose Erfahrung für unsere Benutzer, unabhängig von ihrem Standort oder ihrer bevorzugten Währung.
+
+## Zahlungsmethode
+
+Opire verwendet Stripe als Zahlungsplattform. Daher können Sie mit allen Zahlungsmethoden bezahlen, die Stripe bereitstellt.
+
+Wenn Sie auf Opire ein Trinkgeld geben, ist es nicht erforderlich, Ihre Zahlungsmethode sofort hinzuzufügen. Sie können die Zahlung verzögern und Ihre Daten Stripe nur dann zur Verfügung stellen, wenn Sie bereit sind, die Transaktion abzuschließen. Um ausstehende Trinkgelder zu zahlen, gehen Sie zu Ihrem [Creator-Dashboard](https://app.opire.dev/dashboard/creator/tips).
+
+## Mindestpreis und Kosten
+
+Sie können mit dem Geben von Trinkgeldern **ab 1 USD** beginnen.
+
+Die Gesamtkosten betragen der Trinkgeldbetrag plus die **Stripe-Gebühr (0,35 USD + 5,25 %)** und **unsere Gebühr (10 % des Trinkgelds)**.
+
+<br/>
+<InfoPanel>Unsere Gebühr ist **bei Belohnungen (4 %) deutlich niedriger**, da wir eine unterstützende Umgebung fördern möchten, in der sowohl Entwickler als auch Codebesitzer in der Open-Source-Welt erfolgreich sein können.</InfoPanel>
+<br/>
+
+## Spielplatz
+<br/>
+
+<TipCalculator/>

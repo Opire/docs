@@ -1,0 +1,66 @@
+import { DimmedText } from '../../components/DimmedText';
+import { Steps } from 'nextra/components';
+
+# Erste Schritte
+
+## Als Code-Eigentümer
+
+<Steps>
+
+### App installieren
+
+<DimmedText>Die [Opire-App](/overview/install-app) ermöglicht es jedem Benutzer, Opire-Befehle in Repositories zu verwenden, in denen sie installiert ist, und interagiert so mit der Opire-Plattform, ohne Ihr GitHub-Repository zu verlassen.</DimmedText>
+<br/><br/>
+<DimmedText>Wir empfehlen, Ihre Community darüber zu informieren, dass Sie Opire verwenden, damit sie selbst Belohnungen erstellen können oder die Behebung von Problemen im Auge behalten können. Sie können den `README.md` der Repositories ändern, es im Community-Forum kommunizieren, auf Discord bekannt geben usw.</DimmedText>
+
+### `Optional` Einrichten des Stripe-Kontos Ihrer Organisation
+
+<DimmedText>Wenn Sie einen [Prozentsatz der Belohnungen](/rewards/pricing#percentage-for-code-owner) erhalten möchten, wenn andere Belohnungen für Ihre Projekte erstellen, müssen Sie die Einrichtung des Zahlungsanbieters Ihrer Organisation auf dem [Einstellungsbildschirm](https://app.opire.dev/settings) abschließen.</DimmedText>
+
+### Ihre erste Belohnung erstellen (oder andere können sie für Sie erstellen)
+
+<DimmedText>Wenn Sie Belohnungen in Ihren eigenen Repositories erstellen möchten, überprüfen Sie den Abschnitt ["Als Belohnungsersteller"](/overview/getting-started#as-a-reward-creator).</DimmedText>
+
+</Steps>
+
+## Als Belohnungsersteller
+
+<Steps>
+
+### Ihre erste Belohnung erstellen
+
+<DimmedText>Mit Opire kann **jeder Belohnungen erstellen** in Repositories, in denen die App installiert ist, dank [unserer Befehle](/overview/commands#create-reward). Belohnungen können ab [20 $](/rewards/pricing#minimum-price-and-costs) beginnen. Neben dem Hinzufügen von Belohnungen zu Problemen kann jeder die Anstrengungen eines Benutzers mit Trinkgeldern ab [1 $](/tips/pricing#minimum-price-and-costs) würdigen.</DimmedText>
+<br/><br/>
+<DimmedText>Ein Problem kann [mehrere Belohnungen haben](/rewards/lifecycle#multiple-rewards), ob es sich um denselben Benutzer handelt, der sie erstellt, oder um mehrere Beitragende, die verschiedene Beträge bereitstellen: **bei der Zahlung ist jeder Benutzer für die Bezahlung seines Anteils verantwortlich**.</DimmedText>
+<br/><br/>
+<DimmedText>Wenn eine externe Person zur Organisationsorganisation ein Belohnung erstellt, **wird die Organisation [einen Prozentsatz erhalten](/rewards/pricing#percentage-for-code-owner)**, wenn sie dem Programmierer bezahlt wird.</DimmedText>
+
+### Bezahlen, wenn jemand Ihre mit dem Problem verbundenen Belohnungen beansprucht
+
+<DimmedText>Nachdem der Programmierer die Belohnungen für das Problem beansprucht hat und überprüft wurde, ob die vorgeschlagene Änderung den Erwartungen entspricht, können Sie die Belohnungen, die Sie für dieses Problem erstellt haben, von [Ihrem Dashboard aus](https://app.opire.dev/dashboard/creator/rewards) bezahlen. Falls mehrere Programmierer dasselbe Problem beansprucht haben, können Sie auswählen, wem Sie bezahlen möchten. Es ist **die Verantwortung des Entwicklers sicherzustellen, dass sein Konto korrekt konfiguriert ist**, um Zahlungen zu erhalten.</DimmedText>
+<br/><br/>
+<DimmedText>Dies ist der Moment, in dem die Belohnungsübertragung zusammen mit der Belastung der [zugehörigen Kosten](/rewards/pricing#minimum-price-and-costs) erfolgt.</DimmedText>
+<br/><br/>
+<DimmedText>Wenn [mehrere Personen Belohnungen für dasselbe Problem erstellen](/rewards/lifecycle#multiple-creators), wird jeder Ersteller der entsprechende Betrag in Rechnung gestellt, sodass sie nur die Summe der von ihnen erstellten Belohnungen zahlen.</DimmedText>
+
+</Steps>
+
+## Als Entwickler
+
+<Steps>
+### Konfigurieren Sie Ihr Stripe-Konto
+
+<DimmedText>Um Zahlungen über Opire zu erhalten, müssen Sie die Zahlungsplattform in [Ihren Einstellungen](https://app.opire.dev/settings) konfigurieren. Wenn Sie dies nicht tun, können Belohnungsersteller Sie nicht für Ihre großartige Arbeit entschädigen.</DimmedText>
+
+### Ein belohntes Problem finden und versuchen, es zu lösen
+
+<DimmedText>Auf unserer Plattform können Sie [alle verfügbaren Belohnungen](https://app.opire.dev) basierend auf Technologie, Preis usw. durchsuchen. Wenn Sie ein Problem finden, das Sie lösen können, [versuchen Sie es](/overview/commands#try-to-solve-the-issue), um der Welt mitzuteilen, dass Sie beabsichtigen, die zugehörigen Belohnungen nach Ihrer Lösung zu beanspruchen.</DimmedText>
+
+### Erstellen Sie einen PR und beanspruchen Sie die Belohnung
+
+<DimmedText>Wenn Sie die Lösung für das Problem haben, erstellen Sie einen Pull-Request und verwenden Sie [unsere Befehle](/overview/commands#claim-rewards-associated-with-an-issue), um die zugehörigen Belohnungen zu beanspruchen.</DimmedText>
+<br/><br/>
+<DimmedText>Dies bedeutet nicht, dass Sie automatisch bezahlt werden. Belohnungsersteller zahlen Ihnen, wenn sie bestätigen, dass Ihre Lösung den in der Problemdefinition festgelegten Anforderungen entspricht.</DimmedText>
+<br/><br/>
+<DimmedText>Da dasselbe Problem mehrere zugehörige Belohnungen von verschiedenen Erstellern haben kann, wird jeder von ihnen seinen Anteil separat zahlen (möglicherweise zu verschiedenen Zeiten). In [Ihrem Dashboard](https://app.opire.dev/dashboard/programmer/rewards) können Sie jederzeit den ausstehenden Betrag für die von Ihnen beanspruchten Belohnungen sehen.</DimmedText>
+</Steps>
