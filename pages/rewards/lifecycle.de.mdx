@@ -1,0 +1,70 @@
+# Lebenszyklus
+
+Bei Opire beginnt der Lebenszyklus einer Belohnung, wenn ein Benutzer die Lösung eines Problems anregen möchte. Dieser Prozess beginnt damit, eine Belohnung zu erstellen, die mit einem Problem verknüpft ist, indem [unsere Befehle](/overview/commands#create-reward) verwendet werden.
+
+Nachdem die Belohnung erstellt wurde, erscheint sie auf der [Opire-Plattform](https://app.opire.dev) sowie auf dem Problem selbst (mit einer Nachricht von unserem Bot und einem Label, das den Betrag der Belohnung angibt). Jeder Programmierer kann die Belohnung anzeigen und entscheiden, ob er versuchen möchte, das Problem zu lösen, und andere mit dem [Versuch](/overview/commands#try-to-solve-the-issue) -Befehl benachrichtigen.
+
+Sobald der Programmierer einen Pull-Request (PR) mit den erforderlichen Änderungen öffnet, kann er die mit dem Problem verbundenen Belohnungen [beanspruchen](/overview/commands#claim-rewards-associated-with-an-issue). Dies benachrichtigt die Belohnungsersteller mit einem Link zum PR und gibt an, dass sie mit der Zahlung fortfahren können.
+
+Der Ersteller kann nach Überprüfung des PR die Belohnungszahlung über das Opire-Dashboard initiieren. Wenn mehrere Programmierer die gleichen Belohnungen beansprucht haben, **muss der Ersteller wählen, wem er bezahlen möchte**.
+
+An diesem Punkt führt die Plattform eine Überprüfung durch, um festzustellen, ob der Belohnungsempfänger die Möglichkeit hat, Zahlungen zu erhalten. Wenn der Benutzer Zahlungen erhalten kann, leitet Opire den Ersteller zu einem Stripe-Zahlungsportal weiter. Der endgültige Zahlungsbetrag wird der Belohnungsbetrag plus den [zugehörigen Kosten](/rewards/pricing#minimum-price-and-costs) sein. Nach Abschluss der Zahlung erhält der Benutzer die Belohnung innerhalb von etwa 1-7 Werktagen.
+
+Alternativ, wenn der Benutzer keine Zahlungen erhalten kann, informiert die Plattform den Benutzer über diese Situation und fordert ihn auf, sein Stripe-Konto zu konfigurieren. Sobald konfiguriert, muss der Benutzer den Ersteller benachrichtigen, um die Belohnungszahlung erneut zu versuchen.
+
+## Ersteller nicht mit Organisation verbunden
+
+Opire bietet vollständige Flexibilität bei der Erstellung von Belohnungen, egal ob Sie einer der Projektbetreuer oder ein interessierter Benutzer sind.
+
+Wenn der Belohnungsersteller extern zum Projekt gehört (nicht zu den Mitgliedern der Organisation gehört, die den Projektcode hostet), wird bei der Zahlung der Belohnung ein [zusätzlicher Prozentsatz](/rewards/pricing#percentage-for-code-owner) berechnet, der an die Code-Besitzer geht.
+
+Andererseits wird dieser Prozentsatz nicht auf die endgültigen Kosten angewendet, wenn der Belohnungsersteller ein Projektmitglied ist.
+
+## Mehrere Belohnungen
+
+Ein weiteres Merkmal von Opire ist, dass es keine Grenzen für die Anzahl der Belohnungen gibt, die für ein einzelnes Problem erstellt werden können.
+
+Wenn jemand lieber mit einem bescheideneren Betrag beginnt, kann er jederzeit weitere Belohnungen hinzufügen. Diese werden zu den vorhandenen hinzugefügt, und der Ersteller zahlt alle ausstehenden Belohnungen, wenn jemand sie beansprucht.
+
+## Mehrere Ersteller
+
+Darüber hinaus können mehrere Benutzer daran interessiert sein, Belohnungen für dasselbe Problem zu erstellen.
+
+In diesem Fall unterstützt Opire auch diese kooperative Anstrengung, sodass der Betrag, den der Programmierer erhält, die Summe aller Belohnungen ist, die von verschiedenen Benutzern erstellt wurden. **Jeder Ersteller zahlt seinen Teil separat**.
+
+## Flussdiagramm
+
+```mermaid
+flowchart TD
+    classDef opire stroke:#06C2EC
+    classDef creator stroke:#12b886
+    classDef programmer stroke:#8D1DCD
+    classDef codeowner stroke:#E7CE1B
+    C(Ersteller):::creator
+    O(Opire):::opire
+    P(Programmierer):::programmer
+    CO(Code-Besitzer):::codeowner
+```
+
+```mermaid
+flowchart TD
+    classDef opire stroke:#06C2EC
+    classDef creator stroke:#12b886
+    classDef programmer stroke:#8D1DCD
+    classDef codeowner stroke:#E7CE1B
+    create_reward(Belohnung erstellen):::creator --> try_to_solve(Versuchen Sie, das Problem zu lösen):::programmer
+    try_to_solve --> claim_rewards(PR öffnen und die Belohnungen <br/>beanspruchen):::programmer
+    claim_rewards --> pay_request(Belohnungszahlung anfordern <br/>über das Dashboard):::creator
+    pay_request --> multiple_programmers{Gibt es mehrere<br/>Beanspruchende Entwickler?}:::opire
+    multiple_programmers --> multiple_programmers_no[Nein] --> can_programmer_be_paid{Kann der Entwickler<br/>Zahlungen empfangen?}:::opire
+    multiple_programmers --> multiple_programmers_yes[Ja] --> choose_programmer(Entwickler auswählen):::creator --> can_programmer_be_paid
+    can_programmer_be_paid --> can_programmer_be_paid_yes[Ja] --> sum_rewards_amount[Summe aller ausstehenden Belohnungen des Erstellers <br/> + zugehörige Kosten]:::opire
+    sum_rewards_amount --> pay_from_stripe(Zahlung über Stripe):::creator
+    pay_from_stripe --> opire_fee(Opire Gebühr):::opire
+    pay_from_stripe --> programmer_payment(Entwickler erhält Belohnung<br/> innerhalb von 1-7 Werktagen):::programmer
+    pay_from_stripe --> creator_is_member{Ist der Ersteller Mitglied<br/> der Organisation?}:::opire -->  creator_is_not_member[Nein] --> codeowner_fee(Code-Besitzer Gebühr):::codeowner
+    can_programmer_be_paid --> can_programmer_be_paid_no[Nein] --> D(Entwickler informieren):::opire
+    D --> H(Stripe-Konto konfigurieren):::programmer
+    H --> I(Belohnungszahlung <br/>erneut anfordern):::programmer
+    I --> pay_request
+```

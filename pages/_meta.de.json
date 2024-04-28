@@ -1,0 +1,13 @@
+{
+  "*": {
+    "theme": {
+      "breadcrumb": false,
+      "toc": true,
+      "layout": "default"
+    }
+  },
+  "overview": "Übersicht",
+  "rewards": "Belohnungen",
+  "tips": "Trinkgeld",
+  "faq": "FAQ"
+}

@@ -1,0 +1,99 @@
+import { InfoPanel } from '../components/InfoPanel';
+
+# FAQ
+
+<br/>
+<InfoPanel>
+    Wenn Sie Fragen haben oder während der Nutzung von Opire auf Probleme stoßen, können Sie uns über den `#ask-us`-Kanal auf [unserem Discord](https://discord.gg/jWwwsHRbnJ) kontaktieren, und wir werden so schnell wie möglich antworten.
+</InfoPanel>
+<br/>
+
+<details>
+    <summary><strong>Kann Opire in privaten Projekten verwendet werden?</strong></summary>
+    <div style={{ marginTop: '10px' }}>
+        Ja, unsere Befehle können innerhalb privater Projekte verwendet werden, aber es gibt ein Detail zu beachten.
+        
+        Die erstellten Belohnungen werden auf der Opire-Plattform angezeigt, aber Entwickler ohne Zugriff auf das Projekt können nicht versuchen, die Probleme zu lösen oder die Belohnungen zu beanspruchen.
+        
+        Wenn externe Personen zusammenarbeiten möchten, müssen sie sich direkt mit dem Projektadministrator in Verbindung setzen, um Zugang anzufordern.
+    </div>
+</details>
+
+<details>
+    <summary><strong>Was passiert, wenn ich nicht für die Belohnung bezahlt werde?</strong></summary>
+    <div style={{ marginTop: '10px' }}>
+        Wenn Sie sich in dieser Situation befinden, tut uns das für das, was passiert ist, leid 💔
+        
+        Versuchen Sie zunächst, mit dem Belohnungsersteller zu kommunizieren. Möglicherweise ist ihm nicht bewusst, dass er Sie bereits bezahlen kann, er hat vergessen oder konnte dies bisher noch nicht tun. Wir vertrauen auf die Gemeinschaft und ihre Fähigkeit, Konflikte durch Dialog zu lösen.
+
+        Opire ist ein Werkzeug, das für die Gemeinschaft entwickelt wurde, und wir hoffen, dass es auf die richtige Weise verwendet wird. Wir verstehen, dass dies nicht immer der Fall ist, und für Situationen, in denen ein Benutzer viele Belohnungen erstellt hat, die er nicht bezahlen möchte, verfügt Opire über Algorithmen, die ein solches Verhalten erkennen, und deaktiviert den Benutzer, um weiteren Schaden für die Gemeinschaft zu vermeiden. Diese Benutzer können keine weiteren Belohnungen erstellen, bis sie die Zahlung für die ausstehenden vorgenommen haben.
+    </div>
+</details>
+
+<details>
+    <summary><strong>Für wen ist Opire gedacht?</strong></summary>
+    <div style={{ marginTop: '10px' }}>
+        Mehrere Gruppen können von Opire profitieren:
+
+        - <strong>Entwickler:</strong> Es ist eine Gelegenheit, zusätzliches Einkommen zu verdienen, ohne an Zeitpläne oder umständliche Verfahren gebunden zu sein. Darüber hinaus verbessern Sie Ihre Fähigkeiten, indem Sie reale Probleme in verschiedenen Sprachen lösen.
+        - <strong>Unternehmen:</strong> Wir erleichtern die Problemlösung in Ihren Projektabhängigkeiten, ohne Ihr Entwicklungsteam einzubeziehen. Auf diese Weise können Sie Ihre Kosten optimieren, indem Sie Ressourcen auf das konzentrieren, was für das Unternehmen einen Mehrwert bietet.
+        - <strong>Code-Eigentümer von Open-Source-Projekten:</strong> Sie können Opire nutzen, um Ihre Community zu vergrößern und Ihr Projekt mit Beiträgen anderer Entwickler am Leben zu halten. Außerdem, wenn andere Belohnungen für Ihr Projekt erstellen, erhalten Sie zusätzliches Einkommen, um Ihnen für Ihren Einfluss auf die Open-Source-Welt zu danken.
+        - <strong>Open-Source-Enthusiasten:</strong> Im Gegensatz zu Spendenplattformen sind Belohnungen auf Opire mit einem echten Projektproblem verbunden, das direkt die Verbesserung der Codequalität beeinflusst. Sie werden kein anonymer Spender sein, sondern aktiv an der Verbesserung und dem Wachstum des Projekts teilnehmen.
+    </div>
+</details>
+
+<details>
+    <summary><strong>Wenn ich Einkommen erhalte, wie melde ich die Einkünfte?</strong></summary>
+    <div style={{ marginTop: '10px' }}>
+        Da Sie Einkommen aus der ganzen Welt erhalten können, können wir keine Lösung bereitstellen, die den Anforderungen jedes Landes entspricht (es liegt außerhalb unseres Bereichs).
+        
+        Die Person, die das Einkommen erhält, ist dafür verantwortlich, die Gesetzgebung ihres Landes einzuhalten und es gegebenenfalls wie erforderlich anzugeben. Sie können eine Liste Ihrer Einkünfte direkt aus Ihrem Stripe-Konto erhalten.
+    </div>
+</details>
+
+<details>
+    <summary><strong>Muss ich Stripe konfigurieren, wenn ich Belohnungen erstellen möchte?</strong></summary>
+    <div style={{ marginTop: '10px' }}>
+        Nein.
+        
+        Sie müssen nur dann eine Zahlungsmethode eingeben, wenn Sie die Belohnungen bezahlen, die Sie zuvor erstellt haben.
+    </div>
+</details>
+
+<details>
+    <summary><strong>Was passiert als Entwickler, wenn mein Stripe-Konto nicht konfiguriert ist, wenn ich die Belohnung beanspruche?</strong></summary>
+    <div style={{ marginTop: '10px' }}>
+        Wenn jemand versucht hat, Sie zu bezahlen, Ihr Stripe-Konto jedoch nicht konfiguriert war, kann die Zahlung nicht verarbeitet werden, und wir benachrichtigen Sie, Ihr Konto zu konfigurieren. Sobald konfiguriert, kontaktieren Sie den Belohnungsersteller und fordern Sie ihn auf, den Zahlungsvorgang erneut zu versuchen.
+    </div>
+</details>
+
+<details>
+    <summary><strong>In welchen Ländern kann ich Opire verwenden?</strong></summary>
+    <div style={{ marginTop: '10px' }}>
+        Opire verbietet seinen Gebrauch nicht explizit in einem bestimmten Land. Wenn jedoch ein Zahlungsanbieter wie Stripe verwendet wird, unterliegt der Benutzer den von Stripe auferlegten Bedingungen.
+
+        Stellen Sie vor der Erstellung einer Belohnung sicher, dass Ihr Land von Stripe unterstützt wird. [Stellen Sie sicher, dass Ihr Land von Stripe unterstützt wird](https://stripe.com/global).
+    </div>
+</details>
+
+<details>
+    <summary><strong>Wie erfahre ich, in welchen Repositories ich Belohnungen erstellen kann?</strong></summary>
+    <div style={{ marginTop: '10px' }}>
+        Auf der [Projekte-Seite](https://app.opire.dev/projects) innerhalb von Opire können Sie die Repositories sehen, in denen unsere App installiert ist, und Sie können beliebig viele Belohnungen innerhalb dieser Repositories erstellen.
+
+        Verwenden Sie die Suchleiste, um Ihr Lieblingsprojekt zu finden, und wenn Sie es nicht finden können, kontaktieren Sie den Besitzer des Repositories, um [unsere App zu installieren](/overview/install-app).
+    </div>
+</details>
+
+<details>
+    <summary><strong>Was passiert mit meinem Geld, wenn Opire verschwindet?</strong></summary>
+    <div style={{ marginTop: '10px' }}>
+       Sie würden keinen einzigen Cent verlieren.
+
+       Bei Opire behalten wir keine Gelder für zukünftige Verwendung. Ihr Geld wird immer in Ihren Händen bleiben, bis Sie sich entscheiden, den Entwickler zu bezahlen.
+       
+       Wir werden Sie auch nicht nach Ihrer Kreditkarte oder Bankdaten fragen. Wir haben keinen Zugriff auf diese Daten (und möchten ihn auch nicht), daher gibt es nie unerwartete Zahlungen.
+       
+       Wenn Sie eine Zahlung auf Opire vornehmen, wird alles über Stripe abgewickelt, und die Entwickler erhalten ihren Anteil direkt. Opire behält nur den entsprechenden Prozentsatz für unsere Gebühr ein, wenn Belohnungen-/Trinkgeld-Zahlungen verarbeitet werden.
+    </div>
+</details>

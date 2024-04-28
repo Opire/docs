@@ -470,7 +470,15 @@ function get18n(language: string) {
       tip: "Pourboire",
       tipPricing: "Tarification du pourboire",
       belowMin: "Sous le minimum"  
-    } 
+    },
+    de:{
+      total: "Gesamt",
+      opireFee: "Opire Provision",
+      stripeFee: "Stripe Provision",
+      tip: "Trinkgeld",
+      tipPricing: "Trinkgeld Preisgestaltung",
+      belowMin: "Unter dem Minimum"  
+    }
   };
 
   return i18n[language] ?? en;

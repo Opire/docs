@@ -40,6 +40,18 @@ flowchart TD
     classDef creator stroke:#12b886
     classDef programmer stroke:#8D1DCD
     classDef codeowner stroke:#E7CE1B
+    C(Criador):::creator
+    O(Opire):::opire
+    P(Programador):::programmer
+    CO(Dono do Código):::codeowner
+```
+
+```mermaid
+flowchart TD
+    classDef opire stroke:#06C2EC
+    classDef creator stroke:#12b886
+    classDef programmer stroke:#8D1DCD
+    classDef codeowner stroke:#E7CE1B
     create_reward(Criar recompensa no Problema):::creator --> try_to_solve(Tentar resolver o problema):::programmer
     try_to_solve --> claim_rewards(Abrir PR e reivindicar <br/>as recompensas):::programmer
     claim_rewards --> pay_request(Solicitar pagamento da recompensa <br/>através do painel):::creator

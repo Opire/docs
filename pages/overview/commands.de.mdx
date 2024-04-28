@@ -1,0 +1,61 @@
+import { InfoPanel } from '../../components/InfoPanel';
+import { DimmedText } from '../../components/DimmedText';
+
+# Befehle
+
+Dies sind die Befehle, die in Repositories verwendet werden können, in denen [unsere App installiert ist](/overview/install-app).
+
+<br/>
+<InfoPanel>
+Um unsere Befehle verwenden zu können, ist es nicht erforderlich, dass Sie sich bei Opire registrieren. Wenn ein Repository unsere App installiert hat, kann jeder unsere Befehle verwenden.
+
+Sobald Sie sich zum ersten Mal angemeldet haben, synchronisieren wir die Informationen mit Ihrem Konto, um Ihnen die Ergebnisse der Interaktionen anzuzeigen, die Sie bisher über unsere Befehle getätigt haben (erstellte Belohnungen usw.).
+</InfoPanel>
+
+## Belohnung erstellen
+
+> /reward [Betrag]
+
+<br/>
+<DimmedText>**Beispiel:** `/reward 20`</DimmedText>
+<br/><br/>
+
+<span>Erstellen Sie eine Belohnung mit dem angegebenen Betrag in Dollar für das Problem, zu dem der Kommentar abgegeben wurde. Jeder kann Belohnungen erstellen, wenn das Repository die Opire-App installiert hat. Für dasselbe Problem können mehrere Belohnungen erstellt werden, und ein einzelnes Problem kann Belohnungen von verschiedenen Erstellern haben.</span>
+<br/><br/>
+<InfoPanel>Dieser Befehl kann **beim Erstellen eines Kommentars** zu einem Problem und in der Beschreibung des Problems **bei der Erstellung** verwendet werden. Er funktioniert in keinem anderen Szenario (zum Beispiel beim Bearbeiten eines Kommentars oder der Beschreibung des Problems).</InfoPanel>
+
+## Versuchen, das Problem zu lösen
+
+> /try
+
+<br/>
+<DimmedText>**Beispiel:** `/try`</DimmedText>
+<br/><br/>
+
+<span>Geben Sie an, dass Sie versuchen werden, das Problem zu lösen, mit der Absicht, die Belohnung zu beanspruchen. Wenn Sie nicht der Erste sind, zeigen wir Ihnen die Liste der Entwickler, die ebenfalls versuchen, falls Sie sich organisieren möchten.</span>
+<br/><br/>
+<InfoPanel>Dieser Befehl kann **beim Erstellen eines Kommentars** zu einem Problem verwendet werden. Er funktioniert in keinem anderen Szenario (zum Beispiel beim Bearbeiten eines Kommentars oder seiner Verwendung in einem Pull-Request).</InfoPanel>
+
+## Belohnungen, die mit einem Problem verknüpft sind, beanspruchen
+
+> /claim #[Problemnummer]
+
+<br/>
+<DimmedText>**Beispiel:** `/claim #27`</DimmedText>
+<br/><br/>
+
+<span>Beanspruchen Sie die mit dem genannten Problem verknüpften Belohnungen. Die Ersteller der Belohnungen werden benachrichtigt, um Ihren Pull-Request zu überprüfen und die entsprechende Zahlung vorzunehmen.</span>
+<br/><br/>
+<InfoPanel>Dieser Befehl kann **beim Erstellen eines Kommentars** zu einem Pull-Request und in derselben Beschreibung des Pull-Requests **bei der Erstellung** verwendet werden. Er funktioniert in keinem anderen Szenario (zum Beispiel beim Bearbeiten eines Kommentars oder der Beschreibung des Pull-Requests oder beim Schreiben eines Kommentars zu einem Problem).</InfoPanel>
+
+## Einem Benutzer Trinkgeld geben
+
+> /tip [Betrag] @[Benutzer]
+
+<br/>
+<DimmedText>**Beispiel:** `/tip 10 @nabby27`</DimmedText>
+<br/><br/>
+
+<span>Dies erstellt ein Trinkgeld mit dem angegebenen Betrag in Dollar für den genannten Benutzer. In Ihrem Dashboard können Sie [Ihre Trinkgelder bezahlen](https://app.opire.dev/dashboard/creator/tips) oder [die Trinkgelder überprüfen, die Sie erhalten haben](https://app.opire.dev/dashboard/programmer/tips).</span>
+<br/><br/>
+<InfoPanel>Dieser Befehl kann **beim Erstellen eines Kommentars** zu einem Pull-Request/Problem und in derselben Beschreibung des Pull-Requests/Problems **bei der Erstellung** verwendet werden. Er funktioniert in keinem anderen Szenario (zum Beispiel beim Bearbeiten eines Kommentars oder der Beschreibung des Pull-Requests/Problems).</InfoPanel>

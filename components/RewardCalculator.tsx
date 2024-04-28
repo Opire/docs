@@ -607,6 +607,16 @@ function get18n(language: string) {
       rewardPricing: "Tarification de la Récompense",
       isMember: "Est membre de l'organisation?",
       belowMin: "Sous le minimum"
+    },
+    de:{
+      total: "Gesamt",
+      opireFee: "Opire Gebühr",
+      codeOwnerFee: "Gebühr des Code-Eigentümers",
+      stripeFee: "Stripe Gebühr",
+      reward: "Belohnung",
+      rewardPricing: "Belohnungspreisgestaltung",
+      isMember: "Ist Mitglied der Organisation?",
+      belowMin: "Unter dem Minimum"
     }
   };
 
