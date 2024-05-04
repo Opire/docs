@@ -1,0 +1,61 @@
+import { InfoPanel } from '../../components/InfoPanel';
+import { DimmedText } from '../../components/DimmedText';
+
+# 命令
+
+这些是可以在[安装了我们的机器人](/overview/install-bot)的存储库中使用的命令。
+
+<br/>
+<InfoPanel>
+要能够使用我们的命令，您无需在 Opire 上注册。如果一个存储库安装了我们的机器人，任何人都可以使用我们的命令。
+
+一旦您第一次登录，我们将与您的帐户同步信息，以向您显示到目前为止通过我们的命令所做的互动的结果（创建的奖励等）。
+</InfoPanel>
+
+## 创建奖励
+
+> /reward [金额]
+
+<br/>
+<DimmedText>**示例：** `/reward 20`</DimmedText>
+<br/><br/>
+
+<span>为发表评论的问题创建指定金额的奖励。如果存储库安装了 Opire 机器人，任何人都可以创建奖励。可以为同一个问题创建多个奖励，并且一个问题可以有来自不同创建者的奖励。</span>
+<br/><br/>
+<InfoPanel>此命令可在 **发表评论** 问题时和 **创建问题** 时的描述中使用。在其他情况下（例如，在编辑评论或问题描述时）无法使用此命令。</InfoPanel>
+
+## 尝试解决问题
+
+> /try
+
+<br/>
+<DimmedText>**示例：** `/try`</DimmedText>
+<br/><br/>
+
+<span>指示您将尝试解决问题，并打算索取奖励。如果您不是第一个尝试的人，我们将向您显示也在尝试的开发人员列表，以便您进行组织。</span>
+<br/><br/>
+<InfoPanel>此命令可在 **发表评论** 问题时使用。在其他情况下（例如，在编辑评论或在 PR 中使用时）无法使用此命令。</InfoPanel>
+
+## 认领与问题相关联的奖励
+
+> /claim #[问题编号]
+
+<br/>
+<DimmedText>**示例：** `/claim #27`</DimmedText>
+<br/><br/>
+
+<span>认领与提及问题相关联的奖励。奖励创建者将收到通知，以审查您的 PR 并进行相应的支付。</span>
+<br/><br/>
+<InfoPanel>此命令可在 **发表评论** PR 时和在 **创建 PR** 时的相同描述中使用。在其他情况下（例如，在编辑评论或 PR 描述，或在问题上写评论时）无法使用此命令。</InfoPanel>
+
+## 给用户打赏
+
+> /tip [金额] @[用户]
+
+<br/>
+<DimmedText>**示例：** `/tip 10 @nabby27`</DimmedText>
+<br/><br/>
+
+<span>为提及的用户创建指定金额的小费。您可以在您的仪表板上[支付您的小费](https://app.opire.dev/dashboard/creator/tips)或[查看您收到的小费](https://app.opire.dev/dashboard/programmer/tips)。</span>
+<br/><br/>
+<InfoPanel>此命令可在 **发表评论** PR/问题时和在 **创建 PR/问题** 时的相同描述中使用。在其他情况下（例如，在编辑评论或 PR/问题描述时）无法使用此命令。</InfoPanel>

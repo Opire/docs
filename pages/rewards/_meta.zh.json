@@ -1,0 +1,12 @@
+{
+  "*": {
+    "theme": {
+      "breadcrumb": false,
+      "toc": true,
+      "layout": "default"
+    }
+  },
+  "introduction": "介绍",
+  "pricing": "定价",
+  "lifecycle": "生命周期"
+}
