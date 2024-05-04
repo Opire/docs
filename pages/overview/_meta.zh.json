@@ -1,0 +1,15 @@
+{
+    "*": {
+      "theme": {
+        "breadcrumb": false,
+        "toc": true,
+        "layout": "default"
+      }
+    },
+    "introduction": "介绍",
+    "use-cases": "用例",
+    "getting-started": "入门指南",
+    "install-bot": "安装机器人",
+    "commands": "命令"
+  }
+  

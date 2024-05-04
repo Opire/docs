@@ -1,0 +1,13 @@
+{
+  "*": {
+    "theme": {
+      "breadcrumb": false,
+      "toc": true,
+      "layout": "default"
+    }
+  },
+  "overview": "概览",
+  "rewards": "奖励",
+  "tips": "小费",
+  "faq": "常见问题解答"
+}

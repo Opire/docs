@@ -1,0 +1,72 @@
+import { DimmedText } from '../../components/DimmedText';
+import { Steps } from 'nextra/components';
+
+# 入门指南
+
+## 作为代码所有者
+
+<Steps>
+
+### `可选` 安装机器人
+
+<DimmedText>[Opire 机器人](/overview/install-bot) 允许任何用户在安装了它的存储库中使用 Opire 命令，从而在不离开 GitHub 存储库的情况下与 Opire 平台进行交互。</DimmedText>
+<br/><br/>
+<DimmedText>虽然它是可选的（因为奖励可以从 Web 平台创建），但我们建议使用机器人，以提供更好的体验，直接与项目集成。</DimmedText>
+<br/><br/>
+<DimmedText>我们建议通知您的社区您正在使用 Opire，以便他们自己创建奖励或关注解决问题。您可以修改存储库的 `README.md`，在社区论坛中传达，通过 Discord 宣布等方式。</DimmedText>
+
+### `可选` 设置组织的 Stripe 帐户
+
+<DimmedText>如果您想要在他人在您的项目上创建奖励时获得一定的奖励（百分比） ，则需要在[设置屏幕](https://app.opire.dev/settings)上完成组织的支付平台的设置。</DimmedText>
+
+### 创建您的第一个奖励（或让其他人为您创建）
+
+<DimmedText>如果您要在自己的存储库中创建奖励，请查看["作为奖励创建者"]( /overview/getting-started#as-a-reward-creator) 部分。</DimmedText>
+
+</Steps>
+
+## 作为奖励创建者
+
+<Steps>
+
+### 创建您的第一个奖励
+
+<DimmedText>使用 Opire，**任何人都可以在任何存储库中创建奖励**（无论是否安装了 Opire 的机器人）。在安装了机器人的项目中，您可以使用[我们的命令](/overview/commands#create-reward)。如果您没有安装我们的机器人，您可以直接从[我们的平台](https://app.opire.dev/dashboard/creator/rewards)的仪表板上创建奖励。</DimmedText>
+<br/><br/>
+<DimmedText>奖励可以从 [$20](/zh/rewards/pricing#minimum-price-and-costs) 开始创建。除了将奖励添加到问题中，任何人都可以使用小费 [从 $1](/zh/tips/pricing#minimum-price-and-costs) 开始感谢用户的努力。</DimmedText>
+<br/><br/>
+<DimmedText>一个问题可以有关联的[多个奖励](/rewards/lifecycle#multiple-rewards)，无论是同一个用户创建的还是多个贡献者提供的不同金额的奖励：**在支付时，每个用户将负责支付他们的份额**。</DimmedText>
+<br/><br/>
+<DimmedText>如果存储库组织的外部人员创建了奖励，**该组织将会[收到一定的百分比](/rewards/pricing#percentage-for-code-owner)** 当支付给程序员时。</DimmedText>
+
+### 当有人认领与问题相关的您的奖励时支付
+
+<DimmedText>一旦程序员认领了问题的奖励并且已验证所提议的更改符合预期，您可以从[您的仪表板](https://app.opire.dev/dashboard/creator/rewards)支付您为该问题创建的奖励。如果有多个程序员认领了同一个问题，您可以选择支付哪一个。**开发人员有责任确保他们的帐户已正确配置**以接收付款。</DimmedText>
+<br/><br/>
+<DimmedText>这是奖励转移和[相关成本](/rewards/pricing#minimum-price-and-costs)的收取发生的时刻。</DimmedText>
+<br/><br/>
+<DimmedText>如果[多人为同一个问题创建奖励](/rewards/lifecycle#multiple-creators)，每个创建者将被收取相应的金额，因此他们只会支付自己创建的奖励的总额。</DimmedText>
+
+</Steps>
+
+## 作为开发人员
+
+<Steps>
+### 设置您的 Stripe 帐户
+
+<DimmedText>要通过 Opire 收款，您需要在[您的设置中](https://app.opire.dev/settings)配置支付平台。如果未进行此操作，奖励创建者将无法为您的出色努力进行补偿。</DimmedText>
+
+### 查找有奖励的问题并尝试解决
+
+<DimmedText>在[我们的平台](https://app.opire.dev)上，您可以根据技术、价格等搜索所有可用的奖励。当您找到一个您认为可以解决的问题时，[尝试解决它](/overview/commands#try-to-solve-the-issue) ，让全世界知道您打算在解决后认领相关的奖励。</DimmedText>
+<br/><br/>
+<DimmedText>有可能创建的一些奖励是在我们的命令无法使用的项目中。在这种情况下，您将不得不在[我们的平台](https://app.opire.dev/dashboard/programmer/rewards)的仪表板上认领它们。</DimmedText>
+
+### 创建 PR 并认领奖励
+
+<DimmedText>一旦您解决了问题，创建 PR 并使用[我们的命令](/overview/commands#claim-rewards-associated-with-an-issue)（或[我们的平台](https://app.opire.dev/dashboard/programmer/rewards)）来认领相关的奖励。</DimmedText>
+<br/><br/>
+<DimmedText>这并不意味着您将自动获得支付。奖励创建者将在确认您的解决方案符合问题中定义的要求后支付您。</DimmedText>
+<br/><br/>
+<DimmedText>由于同一个问题可能有来自不同创建者的多个关联奖励，因此每个创建者将单独支付其份额（可能在不同时间）。在[您的仪表板](https://app.opire.dev/dashboard/programmer/rewards)上，您可以随时查看您认领的奖励的待支付金额。</DimmedText>
+</Steps>

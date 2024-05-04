@@ -455,7 +455,7 @@ function get18n(language: string) {
       tipPricing: "Precio de la propina",
       belowMin: "Inválido",
     },
-    pt:{
+    pt: {
       total: "Total",
       opireFee: "Comissão da Opire",
       stripeFee: "Comissão da Stripe",
@@ -463,7 +463,7 @@ function get18n(language: string) {
       tipPricing: "Preço da gorjeta",
       belowMin: "Abaixo do mínimo"  
     },
-    fr:{
+    fr: {
       total: "Total",
       opireFee: "Commission d'Opire",
       stripeFee: "Commission de Stripe",
@@ -471,13 +471,21 @@ function get18n(language: string) {
       tipPricing: "Tarification du pourboire",
       belowMin: "Sous le minimum"  
     },
-    de:{
+    de: {
       total: "Gesamt",
       opireFee: "Opire Provision",
       stripeFee: "Stripe Provision",
       tip: "Trinkgeld",
       tipPricing: "Trinkgeld Preisgestaltung",
       belowMin: "Unter dem Minimum"  
+    },
+    zh: {
+      total: "总计",
+      opireFee: "Opire费用",
+      stripeFee: "Stripe费用",
+      tip: "小费",
+      tipPricing: "小费定价",
+      belowMin: "低于最低限额",
     }
   };
 

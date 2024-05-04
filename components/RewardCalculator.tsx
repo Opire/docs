@@ -598,7 +598,7 @@ function get18n(language: string) {
       isMember: "É membro da organização?",
       belowMin: "Abaixo do mínimo"
     },
-    fr:{
+    fr: {
       total: "Total",
       opireFee: "Frais Opire",
       codeOwnerFee: "Frais du Propriétaire du Code",
@@ -608,7 +608,7 @@ function get18n(language: string) {
       isMember: "Est membre de l'organisation?",
       belowMin: "Sous le minimum"
     },
-    de:{
+    de: {
       total: "Gesamt",
       opireFee: "Opire Gebühr",
       codeOwnerFee: "Gebühr des Code-Eigentümers",
@@ -617,6 +617,16 @@ function get18n(language: string) {
       rewardPricing: "Belohnungspreisgestaltung",
       isMember: "Ist Mitglied der Organisation?",
       belowMin: "Unter dem Minimum"
+    },
+    zh: {
+      total: "总计",
+      opireFee: "Opire费用",
+      codeOwnerFee: "代码所有者费用",
+      stripeFee: "Stripe费用",
+      reward: "奖励",
+      rewardPricing: "奖励定价",
+      isMember: "您是组织的成员吗？",
+      belowMin: "低于最低限额",
     }
   };
 
