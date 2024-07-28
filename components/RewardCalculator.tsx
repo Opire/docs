@@ -13,10 +13,6 @@ const OPIRE_FEE = {
   percentage: 4,
 };
 
-const CODE_OWNER_FEE = {
-  percentage: 5,
-};
-
 const INPUT_REWARD_MAX_VALUE = 5_000;
 
 const CHART_STEP = 1;
@@ -35,29 +31,25 @@ function formatPriceFromUsd(usd: number): string {
   }).format(usd);
 }
 
-function calculate(rewardValue: number, isCreatorMemberOfOrganization: boolean) {
+function calculate(rewardValue: number) {
   const opireFee = rewardValue * (OPIRE_FEE.percentage / 100);
-  const codeOwnerFee = isCreatorMemberOfOrganization ? 0 : rewardValue * (CODE_OWNER_FEE.percentage / 100);
-  const rewardValueWithOpireAndCodeOwnerFee = rewardValue + opireFee + codeOwnerFee;
-  const total = (rewardValueWithOpireAndCodeOwnerFee + STRIPE_FEE.fixed) / (1 - (STRIPE_FEE.percentage / 100));
-  const compensatedStripeFee = total - rewardValueWithOpireAndCodeOwnerFee;
+  const rewardValueWithFees = rewardValue + opireFee;
+  const total = (rewardValueWithFees + STRIPE_FEE.fixed) / (1 - (STRIPE_FEE.percentage / 100));
+  const compensatedStripeFee = total - rewardValueWithFees;
 
   return {
     total: round(total),
     compensatedStripeFee: round(compensatedStripeFee),
     opireFee: round(opireFee),
-    codeOwnerFee: round(codeOwnerFee),
   };
 }
 
 function generateRewardPriceSerie({
-  isCreatorMemberOfOrganization,
   rewardPriceSelected,
   minDefault,
   maxDefault,
   step,
 }: {
-  isCreatorMemberOfOrganization: boolean;
   rewardPriceSelected: number;
   minDefault: number;
   maxDefault: number;
@@ -66,7 +58,6 @@ function generateRewardPriceSerie({
   rewardPriceSerie: number[];
   totalPriceSerie: number[];
   opireFeeSerie: number[];
-  codeOwnerFeeSerie: number[];
   stripeFeeSerie: number[];
 } {
   const min = Math.min(rewardPriceSelected, minDefault, maxDefault);
@@ -76,26 +67,23 @@ function generateRewardPriceSerie({
   const rewardPriceSerie: number[] = [];
   const totalPriceSerie: number[] = [];
   const opireFeeSerie: number[] = [];
-  const codeOwnerFeeSerie: number[] = [];
   const stripeFeeSerie: number[] = [];
 
   for (let i = min; i <= max; i += step) {
-    const { total, opireFee, codeOwnerFee, compensatedStripeFee } = calculate(i, isCreatorMemberOfOrganization);
+    const { total, opireFee, compensatedStripeFee } = calculate(i);
 
     rewardPriceSerie.push(i);
     totalPriceSerie.push(total);
     opireFeeSerie.push(opireFee);
-    codeOwnerFeeSerie.push(codeOwnerFee);
     stripeFeeSerie.push(compensatedStripeFee);
   }
 
   if (isRewardPriceSelectedNotIncluded) {
-    const { total, opireFee, codeOwnerFee, compensatedStripeFee } = calculate(rewardPriceSelected, isCreatorMemberOfOrganization);
+    const { total, opireFee, compensatedStripeFee } = calculate(rewardPriceSelected);
 
     rewardPriceSerie.push(rewardPriceSelected);
     totalPriceSerie.push(total);
     opireFeeSerie.push(opireFee);
-    codeOwnerFeeSerie.push(codeOwnerFee);
     stripeFeeSerie.push(compensatedStripeFee);
   }
 
@@ -103,7 +91,6 @@ function generateRewardPriceSerie({
     rewardPriceSerie: Array.from(new Set(rewardPriceSerie)).sort((a, b) => a - b),
     totalPriceSerie: Array.from(new Set(totalPriceSerie)).sort((a, b) => a - b),
     opireFeeSerie: Array.from(new Set(opireFeeSerie)).sort((a, b) => a - b),
-    codeOwnerFeeSerie: Array.from(new Set(codeOwnerFeeSerie)).sort((a, b) => a - b),
     stripeFeeSerie: Array.from(new Set(stripeFeeSerie)).sort((a, b) => a - b),
   };
 }
@@ -113,18 +100,16 @@ export function RewardCalculator() {
   const i18n = get18n(locale);
 
   const [rewardValue, setRewardValue] = useState<number | undefined>(50);
-  const [isMember, setIsMember] = useState<boolean>(true);
   const handleRewardValueChange = (value: number) => setRewardValue(clamp(value, CHART_DEFAULT_MIN_VALUE, INPUT_REWARD_MAX_VALUE));
   const debouncedRewardValue = useDebounceWithMinMax({
     value: rewardValue ?? CHART_DEFAULT_MIN_VALUE,
     min: CHART_DEFAULT_MIN_VALUE,
     max: INPUT_REWARD_MAX_VALUE,
   });
-  const { total, opireFee, codeOwnerFee, compensatedStripeFee } = calculate(debouncedRewardValue, isMember);
+  const { total, opireFee, compensatedStripeFee } = calculate(debouncedRewardValue);
 
-  const { rewardPriceSerie, totalPriceSerie, opireFeeSerie, codeOwnerFeeSerie, stripeFeeSerie } = generateRewardPriceSerie(
+  const { rewardPriceSerie, totalPriceSerie, opireFeeSerie, stripeFeeSerie } = generateRewardPriceSerie(
     {
-      isCreatorMemberOfOrganization: isMember,
       rewardPriceSelected: debouncedRewardValue,
       minDefault: CHART_DEFAULT_MIN_VALUE,
       maxDefault: CHART_DEFAULT_MAX_VALUE,
@@ -139,7 +124,6 @@ export function RewardCalculator() {
     legend.push(i18n.total);
     legend.push(i18n.reward);
     legend.push(i18n.opireFee);
-    legend.push(i18n.codeOwnerFee);
     legend.push(i18n.stripeFee);
 
     return legend;
@@ -287,36 +271,6 @@ export function RewardCalculator() {
       },
     });
 
-    series.push({
-      // code owner fee
-      data: codeOwnerFeeSerie,
-      type: "line",
-      name: i18n.codeOwnerFee,
-      symbolSize: () => 0,
-      itemStyle: {
-        color: "#06C2EC",
-      },
-      markPoint: {
-        data: [
-          {
-            xAxis: debouncedRewardValue - CHART_DEFAULT_MIN_VALUE,
-            yAxis: codeOwnerFee,
-            itemStyle: {
-              color: "white",
-              borderColor: "#06C2EC",
-            },
-            label: {
-              show: true,
-            },
-            symbol: "circle",
-            symbolSize: 10,
-            symbolRotate: 180,
-          },
-        ],
-        animation: false,
-      },
-    });
-
     return series;
   }
 
@@ -384,31 +338,6 @@ export function RewardCalculator() {
         </div>
 
         <br />
-
-        <div style={{ display: "flex", alignItems: "center" }}>
-          <label htmlFor="is_member" style={{ marginRight: "8px" }}>
-            {i18n.isMember}
-          </label>
-          <input
-            id="is_member"
-            name="is_member"
-            type="checkbox"
-            checked={isMember}
-            onChange={(element) => setIsMember(element.target.checked)}
-            style={{
-              borderRadius: "5px",
-              // border: "none",
-              border: "1px solid #ccc",
-              // outline: '1px solid #ccc',
-              // MozOutlineRadius: '5px',
-              color: "#E7CE1B",
-              width: "20px",
-              height: "20px",
-            }}
-          />
-        </div>
-
-        <br />
         <br />
 
         <div
@@ -467,31 +396,6 @@ export function RewardCalculator() {
               }}
             >
               {formatPriceFromUsd(opireFee)}
-            </span>
-          </div>
-
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <span style={{ marginRight: "8px", textAlign: "center" }}>
-              {i18n.codeOwnerFee}
-            </span>
-            <span
-              style={{
-                padding: "5px 10px",
-                borderRadius: "5px",
-                border: "1px solid #ccc",
-                color: "#06C2EC",
-                fontSize: "1.2rem",
-                fontWeight: 600,
-              }}
-            >
-              {formatPriceFromUsd(codeOwnerFee)}
             </span>
           </div>
 
@@ -568,11 +472,9 @@ function get18n(language: string) {
   const en = {
     total: "Total",
     opireFee: "Opire fee",
-    codeOwnerFee: "Code Owner fee",
     stripeFee: "Stripe fee",
     reward: "Reward",
     rewardPricing: "Reward pricing",
-    isMember: "Are you member of the organization?",
     belowMin: "Below min.",
   };
 
@@ -581,51 +483,41 @@ function get18n(language: string) {
     es: {
       total: "Total",
       opireFee: "Comisión de Opire",
-      codeOwnerFee: "Comisión del autor",
       stripeFee: "Comisión de Stripe",
       reward: "Recompensa",
       rewardPricing: "Precio de la recompensa",
-      isMember: "¿Eres miembro de la organización?",
       belowMin: "Inválido",
     },
     pt: {
       total: "Total",
       opireFee: "Taxa da Opire",
-      codeOwnerFee: "Taxa do Proprietário do Código",
       stripeFee: "Taxa da Stripe",
       reward: "Recompensa",
       rewardPricing: "Preço da Recompensa",
-      isMember: "É membro da organização?",
       belowMin: "Abaixo do mínimo"
     },
     fr: {
       total: "Total",
       opireFee: "Frais Opire",
-      codeOwnerFee: "Frais du Propriétaire du Code",
       stripeFee: "Frais Stripe",
       reward: "Récompense",
       rewardPricing: "Tarification de la Récompense",
-      isMember: "Est membre de l'organisation?",
       belowMin: "Sous le minimum"
     },
     de: {
       total: "Gesamt",
       opireFee: "Opire Gebühr",
-      codeOwnerFee: "Gebühr des Code-Eigentümers",
       stripeFee: "Stripe Gebühr",
       reward: "Belohnung",
       rewardPricing: "Belohnungspreisgestaltung",
-      isMember: "Ist Mitglied der Organisation?",
       belowMin: "Unter dem Minimum"
     },
     zh: {
       total: "总计",
       opireFee: "Opire费用",
-      codeOwnerFee: "代码所有者费用",
       stripeFee: "Stripe费用",
       reward: "奖励",
       rewardPricing: "奖励定价",
-      isMember: "您是组织的成员吗？",
       belowMin: "低于最低限额",
     }
   };
