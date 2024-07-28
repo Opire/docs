@@ -10,14 +10,6 @@ El creador, después de revisar la PR, puede iniciar el pago de la recompensa a 
 
 En este punto, la plataforma realiza una verificación para determinar si el usuario destinatario de la recompensa tiene la capacidad de recibir pagos. Si el usuario puede recibir pagos, Opire redirige al creador a una pasarela de pago de Stripe. El precio final a pagar será el de la recompensa más los [costes asociados](/es/rewards/pricing#precio-mínimo-y-costes). Tras finalizar el pago, el usuario recibe la recompensa aproximadamente en un plazo de 1-7 días laborables. En cambio, si el usuario no tiene la capacidad de recibir pagos, la plataforma informa al usuario sobre esta situación para que configure su cuenta de Stripe. Una vez configurada, el usuario tendrá que avisar al creador para que intente tramitar de nuevo el pago de la recompensa.
 
-## Creador no relacionado con la organización
-
-Opire da flexibilidad total a la hora de crear las recompensas, no importa si eres uno de los mantenedores del proyecto o un usuario interesado en el mismo. 
-
-Si quien crea la recompensa es alguien ajeno al proyecto (no está entre los miembros de la organización que aloja el código del proyecto), a la hora de pagar la recompensa se cobrará un [porcentaje extra](/es/rewards/pricing#porcentaje-para-el-autor-del-código) que irá destinado a los autores del código.
-
-Por contra, si quien crea la recompensa es miembro del proyecto, dicho porcentaje no será aplicado a los costes finales.
-
 ## Múltiples recompensas
 
 Otro factor diferencial de Opire es que no hay límites en el número de recompensas que se pueden crear para una misma issue.
@@ -60,7 +52,6 @@ flowchart TD
     sum_rewards_amount --> pay_from_stripe(Pago a través de Stripe):::creator
     pay_from_stripe --> opire_fee(Comisión de Opire):::opire
     pay_from_stripe --> programmer_payment(Programador recibe recompensa<br/> en 1-7 días laborables):::programmer
-    pay_from_stripe --> creator_is_member{¿Creador es miembro<br/> de la organización?}:::opire -->  creator_is_not_member[No] --> codeowner_fee(Comisión del autor del código):::codeowner
     can_programmer_be_paid --> can_programmer_be_paid_no[No] --> D(Avisamos al programador):::opire
     D --> H(Configura su <br/>cuenta de Stripe):::programmer
     H --> I(Pide que se <br/>pague la recompensa):::programmer

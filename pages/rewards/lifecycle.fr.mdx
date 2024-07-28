@@ -12,14 +12,6 @@ Le créateur, après avoir examiné le PR, peut initier le paiement de la récom
 
 Alternativement, si l'utilisateur ne peut pas recevoir de paiements, la plateforme l'informe de cette situation et l'invite à configurer son compte Stripe. Une fois configuré, l'utilisateur doit informer le créateur pour tenter à nouveau le paiement de la récompense.
 
-## Créateur non lié à l'organisation
-
-Opire offre une flexibilité totale lors de la création de récompenses, que vous soyez l'un des mainteneurs du projet ou un utilisateur intéressé.
-
-Si le créateur de la récompense est externe au projet (non parmi les membres de l'organisation hébergeant le code du projet), un [pourcentage supplémentaire](/rewards/pricing#percentage-for-code-owner) sera facturé lors du paiement de la récompense, et il ira aux propriétaires du code.
-
-En revanche, si le créateur de la récompense est un membre du projet, ce pourcentage ne sera pas appliqué aux coûts finaux.
-
 ## Récompenses multiples
 
 Une autre caractéristique distinctive d'Opire est qu'il n'y a pas de limites au nombre de récompenses pouvant être créées pour un seul problème.
@@ -50,7 +42,6 @@ flowchart TD
     sum_rewards_amount --> pay_from_stripe(Paiement via Stripe):::creator
     pay_from_stripe --> opire_fee(Frais Opire):::opire
     pay_from_stripe --> programmer_payment(Le programmeur reçoit la récompense<br/>dans un délai de 1 à 7 jours ouvrables):::programmer
-    pay_from_stripe --> creator_is_member{Le créateur est-il membre<br/>de l'organisation ?}:::opire -->  creator_is_not_member[Non] --> codeowner_fee(Frais Propriétaire du Code):::codeowner
     can_programmer_be_paid --> can_programmer_be_paid_no[Non] --> D(Informer le programmeur):::opire
     D --> H(Configurer le compte Stripe):::programmer
     H --> I(Demander à nouveau le paiement de la récompense):::programmer

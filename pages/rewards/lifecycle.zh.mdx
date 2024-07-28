@@ -12,14 +12,6 @@
 
 另外，如果用户无法接收支付，平台会通知用户，并提示他们配置他们的 Stripe 帐户。配置完成后，用户必须通知创建者再次尝试奖励支付。
 
-## 与组织无关的创建者
-
-Opire 在创建奖励时提供了完全的灵活性，无论您是项目维护者还是感兴趣的用户。
-
-如果奖励创建者与项目无关（不是托管项目代码的组织成员之一），则在支付奖励时会收取额外的 [百分比](/rewards/pricing#percentage-for-code-owner)，并且这些百分比将进入代码所有者的手中。
-
-另一方面，如果奖励创建者是项目成员，则最终成本不会应用此百分比。
-
 ## 多个奖励
 
 Opire 的另一个独特特点是，可以为单个问题创建的奖励数量没有限制。
@@ -56,7 +48,6 @@ flowchart TD
     所有待支付的奖励金额 --> 通过Stripe支付(Payment through Stripe):::creator
     通过Stripe支付 --> Opire费用(Opire Fee):::opire
     通过Stripe支付 --> 程序员支付(Programmer receives reward<br/> within 1-7 business days):::programmer
-    通过Stripe支付 --> 创建者是否为组织成员{Is creator a member<br/> of the organization?}:::opire -->  创建者不是[No] --> 代码所有者费用(Code Owner Fee):::codeowner
     程序员可以收款吗 --> 程序员可以收款否[No] --> 通知程序员(Inform programmer):::opire
     通知程序员 --> 配置Stripe账户(Configure Stripe account):::programmer
     配置Stripe账户 --> 请求再次支付奖励(Request reward payment <br/>again):::programmer

@@ -12,14 +12,6 @@ An diesem Punkt führt die Plattform eine Überprüfung durch, um festzustellen,
 
 Alternativ, wenn der Benutzer keine Zahlungen erhalten kann, informiert die Plattform den Benutzer über diese Situation und fordert ihn auf, sein Stripe-Konto zu konfigurieren. Sobald konfiguriert, muss der Benutzer den Ersteller benachrichtigen, um die Belohnungszahlung erneut zu versuchen.
 
-## Ersteller nicht mit Organisation verbunden
-
-Opire bietet vollständige Flexibilität bei der Erstellung von Belohnungen, egal ob Sie einer der Projektbetreuer oder ein interessierter Benutzer sind.
-
-Wenn der Belohnungsersteller extern zum Projekt gehört (nicht zu den Mitgliedern der Organisation gehört, die den Projektcode hostet), wird bei der Zahlung der Belohnung ein [zusätzlicher Prozentsatz](/rewards/pricing#percentage-for-code-owner) berechnet, der an die Code-Besitzer geht.
-
-Andererseits wird dieser Prozentsatz nicht auf die endgültigen Kosten angewendet, wenn der Belohnungsersteller ein Projektmitglied ist.
-
 ## Mehrere Belohnungen
 
 Ein weiteres Merkmal von Opire ist, dass es keine Grenzen für die Anzahl der Belohnungen gibt, die für ein einzelnes Problem erstellt werden können.
@@ -62,7 +54,6 @@ flowchart TD
     sum_rewards_amount --> pay_from_stripe(Zahlung über Stripe):::creator
     pay_from_stripe --> opire_fee(Opire Gebühr):::opire
     pay_from_stripe --> programmer_payment(Entwickler erhält Belohnung<br/> innerhalb von 1-7 Werktagen):::programmer
-    pay_from_stripe --> creator_is_member{Ist der Ersteller Mitglied<br/> der Organisation?}:::opire -->  creator_is_not_member[Nein] --> codeowner_fee(Code-Besitzer Gebühr):::codeowner
     can_programmer_be_paid --> can_programmer_be_paid_no[Nein] --> D(Entwickler informieren):::opire
     D --> H(Stripe-Konto konfigurieren):::programmer
     H --> I(Belohnungszahlung <br/>erneut anfordern):::programmer

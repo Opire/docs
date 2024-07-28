@@ -12,14 +12,6 @@ Neste ponto, a plataforma realiza uma verificação para determinar se o destina
 
 Alternativamente, se o usuário não puder receber pagamentos, a plataforma informará o usuário dessa situação e solicitará que ele configure sua conta Stripe. Uma vez configurado, o usuário deve notificar o criador para tentar o pagamento da recompensa novamente.
 
-## Criador Não Relacionado à Organização
-
-A Opire fornece completa flexibilidade ao criar recompensas, seja você um dos mantenedores do projeto ou um usuário interessado.
-
-Se o criador da recompensa for externo ao projeto (não estiver entre os membros da organização que hospeda o código do projeto), uma [porcentagem adicional](/rewards/pricing#percentage-for-code-owner) será cobrada ao pagar a recompensa, e irá para os proprietários do código.
-
-Por outro lado, se o criador da recompensa for um membro do projeto, essa porcentagem não será aplicada aos custos finais.
-
 ## Múltiplas Recompensas
 
 Outra característica distintiva da Opire é que não há limites para o número de recompensas que podem ser criadas para um único problema.
@@ -62,7 +54,6 @@ flowchart TD
     sum_rewards_amount --> pay_from_stripe(Pagamento através do Stripe):::creator
     pay_from_stripe --> opire_fee(Taxa da Opire):::opire
     pay_from_stripe --> programmer_payment(Programador recebe recompensa<br/>dentro de 1-7 dias úteis):::programmer
-    pay_from_stripe --> creator_is_member{Criador é membro<br/>da organização?}:::opire -->  creator_is_not_member[Não] --> codeowner_fee(Taxa do Dono do Código):::codeowner
     can_programmer_be_paid --> can_programmer_be_paid_no[Não] --> D(Informar programador):::opire
     D --> H(Configurar conta Stripe):::programmer
     H --> I(Solicitar pagamento da recompensa <br/>novamente):::programmer

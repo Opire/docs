@@ -12,14 +12,6 @@ At this point, the platform performs a verification to determine if the reward r
 
 Alternatively, if the user cannot receive payments, the platform informs the user of this situation and prompts them to configure their Stripe account. Once configured, the user must notify the creator to attempt the reward payment again.
 
-## Creator Unrelated to Organization
-
-Opire provides complete flexibility when creating rewards, whether you are one of the project maintainers or an interested user.
-
-If the reward creator is external to the project (not among the members of the organization hosting the project code), an [additional percentage](/rewards/pricing#percentage-for-code-owner) will be charged when paying the reward, and it will go to the code owners.
-
-On the other hand, if the reward creator is a project member this percentage will not be applied to the final costs.
-
 ## Multiple Rewards
 
 Another distinctive feature of Opire is that there are no limits on the number of rewards that can be created for a single issue.
@@ -62,7 +54,6 @@ flowchart TD
     sum_rewards_amount --> pay_from_stripe(Payment through Stripe):::creator
     pay_from_stripe --> opire_fee(Opire Fee):::opire
     pay_from_stripe --> programmer_payment(Programmer receives reward<br/> within 1-7 business days):::programmer
-    pay_from_stripe --> creator_is_member{Is creator a member<br/> of the organization?}:::opire -->  creator_is_not_member[No] --> codeowner_fee(Code Owner Fee):::codeowner
     can_programmer_be_paid --> can_programmer_be_paid_no[No] --> D(Inform programmer):::opire
     D --> H(Configure Stripe account):::programmer
     H --> I(Request reward payment <br/>again):::programmer
