@@ -5,7 +5,7 @@ import ReactEcharts from "echarts-for-react";
 import { useRouter } from "next/router";
 
 const STRIPE_FEE = {
-  fixed: 0.35,
+  fixed: 0.85, // Payments + Stripe Connect Express accounts cost
   percentage: 5.25,
 };
 
