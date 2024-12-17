@@ -22,7 +22,7 @@ Opire is a **rewards platform for software developers**. With Opire, anyone can 
 ## 🌍 Community
 
 <div align="center">
-<a href="https://discord.gg/jWwwsHRbnJ" target="_blank">
+<a href="https://discord.gg/Rfq8CMZH4b" target="_blank">
     <img src="./public/rrss_logos/discord.png" alt="Discord logo" style="width: 10%">
 </a>
 <a href="https://www.reddit.com/r/opire" target="_blank">

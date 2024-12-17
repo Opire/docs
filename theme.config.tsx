@@ -34,7 +34,7 @@ const config: DocsThemeConfig = {
     link: 'https://github.com/opire/docs',
   },
   chat: {
-    link: 'https://discord.gg/jWwwsHRbnJ',
+    link: 'https://discord.gg/Rfq8CMZH4b',
   },
   useNextSeoProps() {
     return {
